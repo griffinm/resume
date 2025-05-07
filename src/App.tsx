@@ -2,8 +2,9 @@ import React from 'react';
 import { Header } from './components/Header/Header';
 import { Summary } from './components/Summary/Summary';
 import { Experience } from './components/Experience';
-import { Projects } from './components/Projects';
+import { ProjectItem } from './components/Projects';
 import { Container } from './components/Layout';
+import { ResumeSection } from './components/ResumeSection/ResumeSection';
 
 import * as data from "@/utils/data";
 
@@ -16,18 +17,18 @@ export default function App() {
           <main className="md:col-span-2 print:col-span-2 space-y-8 print:space-y-6">
             <Summary props={data.summaryData} />
 
-            <Experience.Container>
+            <ResumeSection title="Experience">
               {data.experiences.map((experience) => (
-                <Experience.Item key={experience.startDate.toISOString()} props={experience} />
+                <Experience key={experience.startDate.toISOString()} {...experience} />
               ))}
-            </Experience.Container>
+            </ResumeSection>
 
             {data.projects.length > 0 && (
-              <Projects.Container>
-                {data.projects.map((project) => (
-                  <Projects.Item key={project.title} {...project} />
+              <ResumeSection title="Projects">
+                {data.projects.map((project, index) => (
+                  <ProjectItem key={index} {...project} />
                 ))}
-              </Projects.Container>
+              </ResumeSection>
             )}
 
           </main>

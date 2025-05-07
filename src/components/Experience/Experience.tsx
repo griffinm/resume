@@ -5,15 +5,14 @@ import { format as formatDate } from "date-fns";
 
 const dateFormat = "MMM-yy";
 
-export function Experience({ props }: { props: ExperienceProps }) {
-  const { 
-    company, 
-    title,
-    note,
-    startDate,
-    endDate,
-    bullets,
-  } = props;
+export const Experience: React.FC<ExperienceProps> = ({
+  company,
+  title,
+  note,
+  startDate,
+  endDate,
+  bullets,
+}) => {
 
   const renderNote = () => {
     if (note) {
