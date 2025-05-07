@@ -33,3 +33,7 @@ export interface EducationItemProps {
   degree: string;
   endDate: Date;
 }
+export interface Skills {
+  category: string;
+  skills: string[];
+}

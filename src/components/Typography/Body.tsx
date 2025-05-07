@@ -19,7 +19,7 @@ export function P({
     "text-lg": size === "large",
     "text-text-light": weight === "light",
     "text-text-main": color === "base",
-    "text-secondary": color === "secondary",
+    "text-text-secondary": color === "secondary",
     "text-text-dark": color === "dark",
     "mb-2": !noMargin,
   });

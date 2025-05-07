@@ -4,6 +4,7 @@ import {
   ExperienceProps,
   ProjectItemProps,
   EducationItemProps,
+  Skills,
 } from "@/utils/types";
 
 export const headerData: HeaderProps = {
@@ -58,4 +59,24 @@ export const education: EducationItemProps[] = [
     degree: "Bachelors of Computer Science",
     endDate: new Date("2024-05-09"),
   }
+]
+
+export const skills: Skills[] = [
+  {
+    category: "Programming Languages",
+    skills: ["JavaScript", "TypeScript", "Ruby", "Python", "SQL"],
+  },
+  {
+    category: "Frameworks & Libraries",
+    skills: ["React", "NextJS", "Ruby on Rails"],
+  },
+  {
+    category: "Databases", 
+    skills: ["PostgreSQL", "MongoDB", "MySQL"],
+  },
+  {
+    category: "Tools & Platforms",
+    skills: ["Git", "Docker", "AWS", "Jenkins", "JIRA"],
+  },
+  
 ]

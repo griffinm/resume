@@ -10,7 +10,7 @@ export const EducationItem: React.FC<EducationItemProps> = ({
   return (
     <article>
       <Headers.H3>{degree}</Headers.H3>
-      <Body.P color="secondary">
+      <Body.P weight="light" color="secondary">
         {school} | Completed {formatDate(endDate, "MMM yyyy")}
       </Body.P>
     </article>

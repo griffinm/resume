@@ -24,3 +24,10 @@ export function H3({ children }: { children: React.ReactNode }) {
   )
 }
 
+export function H4({ children }: { children: React.ReactNode }) {
+  return (
+    <h4 className={`font-medium text-text-main mb-1 print:text-base`}>
+      {children}
+    </h4>
+  )
+}

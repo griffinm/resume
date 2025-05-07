@@ -8,6 +8,7 @@ import { ResumeSection } from './components/ResumeSection/ResumeSection';
 
 import * as data from "@/utils/data";
 import { EducationItem } from './components/Education';
+import { Skills } from './components/Skills/Skills';
 
 export default function App() {
 
@@ -36,36 +37,17 @@ export default function App() {
 
           <aside className="md:col-span-1 print:col-span-1 space-y-8 print:space-y-6">
 
+            <ResumeSection title="Skills">
+              <Skills skills={data.skills} />
+            </ResumeSection>
+            
             <ResumeSection title="Education">
               {data.education.map((education) => (
                 <EducationItem key={education.endDate.toISOString()} {...education} />
               ))}
             </ResumeSection>
 
-            {/* Skills Section */}
-            <section>
-                <h2 className="text-2xl font-semibold text-primary border-b-2 border-secondary pb-1 mb-3 print:text-xl print:mb-2">Skills</h2>
-                <div>
-                  <h4 className="font-medium text-text-main mb-1 print:text-base">Programming Languages:</h4>
-                  <p className="text-text-light print:text-sm">JavaScript, Python, Java, C++, SQL</p>
-                </div>
-                <div className="mt-2 print:mt-1.5">
-                  <h4 className="font-medium text-text-main mb-1 print:text-base">Frameworks & Libraries:</h4>
-                  <p className="text-text-light print:text-sm">React, Node.js, Express, Spring Boot, Tailwind CSS, Bootstrap</p>
-                </div>
-                <div className="mt-2 print:mt-1.5">
-                  <h4 className="font-medium text-text-main mb-1 print:text-base">Databases:</h4>
-                  <p className="text-text-light print:text-sm">PostgreSQL, MongoDB, MySQL</p>
-                </div>
-                <div className="mt-2 print:mt-1.5">
-                  <h4 className="font-medium text-text-main mb-1 print:text-base">Tools & Platforms:</h4>
-                  <p className="text-text-light print:text-sm">Git, Docker, AWS, Jenkins, JIRA</p>
-                </div>
-                <div className="mt-2 print:mt-1.5">
-                  <h4 className="font-medium text-text-main mb-1 print:text-base">Other:</h4>
-                  <p className="text-text-light print:text-sm">Agile Methodologies, RESTful APIs, UI/UX Design Principles</p>
-                </div>
-            </section>
+
           </aside>
         </Container.Content>
         
