@@ -5,7 +5,7 @@ import { format as formatDate } from "date-fns";
 
 const dateFormat = "MMM-yy";
 
-export const Experience: React.FC<ExperienceProps> = ({
+export const ExperienceItem: React.FC<ExperienceProps> = ({
   company,
   title,
   note,

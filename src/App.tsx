@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from './components/Header/Header';
 import { Summary } from './components/Summary/Summary';
-import { Experience } from './components/Experience';
+import { ExperienceItem } from './components/Experience';
 import { ProjectItem } from './components/Projects';
 import { Container } from './components/Layout';
 import { ResumeSection } from './components/ResumeSection/ResumeSection';
@@ -19,7 +19,7 @@ export default function App() {
 
             <ResumeSection title="Experience">
               {data.experiences.map((experience) => (
-                <Experience key={experience.startDate.toISOString()} {...experience} />
+                <ExperienceItem key={experience.startDate.toISOString()} {...experience} />
               ))}
             </ResumeSection>
 
