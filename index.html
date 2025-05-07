@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Griffin Mahoney</title>
+  <link href="/src/input.css" rel="stylesheet">
+  <style>
+      @media print {
+        body {
+          font-size: 10pt; /* Adjust as needed */
+          line-height: 1.2; /* Adjust as needed */
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          -webkit-print-color-adjust: exact; /* Ensures colors are printed */
+          print-color-adjust: exact;
+        }
+        /* Remove shadow and unnecessary margins/paddings for the container in print */
+        #root > div {
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding: 20pt 30pt !important; /* Adjust padding for print */
+          box-shadow: none !important;
+          border: none !important;
+        }
+        .no-print {
+          display: none !important;
+        }
+        .page-break {
+          page-break-after: always;
+        }
+        a {
+          color: inherit !important; 
+          text-decoration: none !important; 
+        }
+        a[href^="http"]:after, a[href^="https"]:after {
+          content: " (" attr(href) ")"; 
+          font-size: 0.8em;
+          font-weight: normal;
+          display: none; 
+        }
+      }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html> 
