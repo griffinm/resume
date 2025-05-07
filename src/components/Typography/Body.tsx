@@ -13,14 +13,13 @@ export function P({
   color?: "base" | "secondary" | "dark",
   noMargin?: boolean,
 }) {
-  const className = classNames({
-    "text-text-light text-base print:text-sm": true,
+  const className = classNames("text-base print:text-sm", {
     "font-bold": weight === "bold",
     "text-sm": size === "small",
     "text-lg": size === "large",
     "text-text-light": weight === "light",
     "text-text-main": color === "base",
-    "text-text-secondary": color === "secondary",
+    "text-secondary": color === "secondary",
     "text-text-dark": color === "dark",
     "mb-2": !noMargin,
   });

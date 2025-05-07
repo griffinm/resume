@@ -3,6 +3,7 @@ import {
   SummaryProps,
   ExperienceProps,
   ProjectItemProps,
+  EducationItemProps,
 } from "@/utils/types";
 
 export const headerData: HeaderProps = {
@@ -48,5 +49,13 @@ export const projects: ProjectItemProps[] = [
     githubUrl: "https://github.com/griffinmahoney/yardzen",
     liveDemoUrl: "https://yardzen.com",
     technologies: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Docker", "Kubernetes"],
+  }
+]
+
+export const education: EducationItemProps[] = [
+  {
+    school: "Wentworth Institute of Technology",
+    degree: "Bachelors of Computer Science",
+    endDate: new Date("2024-05-09"),
   }
 ]

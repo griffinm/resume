@@ -27,3 +27,9 @@ export interface ProjectItemProps {
   liveDemoUrl?: string;
   technologies?: string[];
 }
+
+export interface EducationItemProps {
+  school: string;
+  degree: string;
+  endDate: Date;
+}

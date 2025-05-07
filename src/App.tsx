@@ -7,6 +7,7 @@ import { Container } from './components/Layout';
 import { ResumeSection } from './components/ResumeSection/ResumeSection';
 
 import * as data from "@/utils/data";
+import { EducationItem } from './components/Education';
 
 export default function App() {
 
@@ -33,20 +34,13 @@ export default function App() {
 
           </main>
 
-          {/* Right Column / Sidebar */}
           <aside className="md:col-span-1 print:col-span-1 space-y-8 print:space-y-6">
-            {/* Education Section */}
-            <section>
-              <h2 className="text-2xl font-semibold text-primary border-b-2 border-secondary pb-1 mb-3 print:text-xl print:mb-2">Education</h2>
-              <article>
-                <h3 className="text-xl font-medium text-text-main print:text-lg">M.S. in Computer Science</h3>
-                <p className="text-secondary text-base print:text-sm">University of Technology, City, State | Graduated May 2020</p>
-              </article>
-              <article className="mt-3 print:mt-2">
-                <h3 className="text-xl font-medium text-text-main print:text-lg">B.S. in Software Engineering</h3>
-                <p className="text-secondary text-base print:text-sm">State University, City, State | Graduated May 2018</p>
-              </article>
-            </section>
+
+            <ResumeSection title="Education">
+              {data.education.map((education) => (
+                <EducationItem key={education.endDate.toISOString()} {...education} />
+              ))}
+            </ResumeSection>
 
             {/* Skills Section */}
             <section>
