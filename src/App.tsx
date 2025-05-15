@@ -52,7 +52,7 @@ export default function App() {
         </Container.Content>
         
         <footer className="text-center mt-8 pt-4 border-t border-secondary text-text-light text-xs print:hidden">
-            <p>Built with Tailwind CSS. Modern, simple, and designed to fit on one page.</p>
+            <p>Built with Tailwind CSS and React</p>
         </footer>
 
       </Container.Container>

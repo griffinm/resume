@@ -25,7 +25,7 @@ export const ExperienceItem: React.FC<ExperienceProps> = ({
   }
 
   return (
-    <article>
+    <article className="mb-5 border-b border-gray-200 pb-5">
       <div className="flex flex-row justify-between">
         <div className="flex flex-row items-end">
           <Headers.H3>{company}</Headers.H3>
