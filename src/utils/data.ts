@@ -25,7 +25,7 @@ export const experiences: ExperienceProps[] = [
     company: "Yardzen",
     title: "VP of Engineering",
     note: "Acquired by OldCastle in 2024",
-    startDate: new Date("2021-02-01"),
+    startDate: new Date("2021-02-02"),
     bullets: [
       "Led the engineering team to successfully integrate Yardzen's AI-powered landscaping platform into OldCastle's existing operations.",
       "Developed and implemented a comprehensive AI-driven solution for automated landscaping design and project management.",
@@ -33,23 +33,61 @@ export const experiences: ExperienceProps[] = [
       "Collaborated with cross-functional teams to optimize Yardzen's AI-powered landscaping platform for seamless integration into OldCastle's operations.",
       "Led the engineering team to successfully integrate Yardzen's AI-powered landscaping platform into OldCastle's existing operations.",
     ],
+  },
+  {
+    company: "Valor Performance",
+    title: "CTO",
+    note: "Acquired by Mursion",
+    startDate: new Date("2018-04-02"),
+    endDate: new Date("2021-02-02"),
+    bullets: [
+      "Led cross-functional product and engineering teams to build a remote executive coaching platform serving coaches, clients, and administrators",
+      "Acted as a principal engineer, contributing heavily to core application code, infrastructure, and feature development across the stack",
+      "Architected and launched a proprietary video conferencing solution tailored for high-performance coaching sessions",
+      "Built an integrated learning management system (LMS) to support custom course creation and progression tracking",
+      "Directed product strategy and execution, translating business needs into scalable technical solutions and coordinating roadmap delivery",
+    ]
+  },
+  {
+    company: "CoachUp",
+    title: "Advisor",
+    startDate: new Date("2018-11-02"),
+    bullets: [
+      "Provide support and strategic guidance to the CEO and executive team",
+    ]
+  },
+  {
+    company: "Athletes of Valor",
+    title: "Co-Founder/CTO",
+    note: "Acquired by CoachUp",
+    startDate: new Date("2016-08-02"),
+    endDate: new Date("2018-11-02"),
+    bullets: [
+      "Built and launched full-stack web application as solo engineer using Ruby on Rails, including infrastructure, front end, and back end.",
+      "Led technical strategy and product roadmap, defining core features and aligning engineering efforts with business goals",
+      "Co-founded the company and played a key role in capital raising efforts, including investor presentations and pitch refinement",
+      "Won the 50k prize in the competitive MassChallenge startup accelerator, validating business potential and execution strength",
+    ]
   }
 ]
 
 export const projects: ProjectItemProps[] = [
   {
-    title: "Yardzen",
-    description: "Yardzen is a landscaping platform that allows users to design and manage their landscaping projects.",
-    githubUrl: "https://github.com/griffinmahoney/yardzen",
-    liveDemoUrl: "https://yardzen.com",
-    technologies: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Docker", "Kubernetes"],
+    title: "YardAI",
+    description: "YardAI is a tool that uses a proprietary diffusion model to generate landscaping designs for user uploaded images. As the sole engineer on this project I trained, iterated, and deployed an image generation model to production at scale that has genertaed over 100,000 images for end users.",
+    technologies: ["Stable Diffusion", "Python", "Rails", "CUDA/Transformers", "React (NextJS)"],
   },
   {
-    title: "Yardzen",
-    description: "Yardzen is a landscaping platform that allows users to design and manage their landscaping projects.",
-    githubUrl: "https://github.com/griffinmahoney/yardzen",
-    liveDemoUrl: "https://yardzen.com",
-    technologies: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Docker", "Kubernetes"],
+    title: "Sales Call AI",
+    description: "Sales Call AI is a proprietary tool for Yardzen that transcribes sales calls and uses AI to provide insights on themes, customer profile, questions, objections to enable the data driven development of sales processes and techniques.",
+    technologies: ["LLama/Ollama/OpenAI", "Python", "Rails", "React"],
+  },
+  {
+    title: "Budgeting (Personal Project)",
+    description: "As a learning project for NextJS, I developed a tool which integrated to the Plaid API to provide insights into personal finances. This tool was developed as a replacement to mint.com",
+    githubUrl: "https://github.com/griffinmahoney/budgeting",
+    liveDemoUrl: "https://budgeting.griffinmahoney.com",
+    technologies: ["React", "TypeScript", "NextJS", "Plaid"],
   }
 ]
 
@@ -62,6 +100,10 @@ export const education: EducationItemProps[] = [
 ]
 
 export const skills: Skills[] = [
+  {
+    category: "Leadership",
+    skills: ["Hiring and Talent Development", "Distributed Teams", "Coaching and Mentoring", "Product Management", "Agile Methodologies"],
+  },
   {
     category: "Programming Languages",
     skills: ["JavaScript", "TypeScript", "Ruby", "Python", "SQL"],
@@ -76,7 +118,7 @@ export const skills: Skills[] = [
   },
   {
     category: "Tools & Platforms",
-    skills: ["Git", "Docker", "AWS", "Jenkins", "JIRA"],
+    skills: ["Kubernetes", "Docker", "AWS", "Linux", "Github Actions"],
   },
   
 ]
