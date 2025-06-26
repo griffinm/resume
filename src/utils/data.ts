@@ -11,7 +11,7 @@ export const headerData: HeaderProps = {
   name: "Griffin Mahoney",
   email: "griffin@griffinmahoney.com",
   phone: "+1 (617) 652-0496",
-  linkedin: "https://linkedin.com/in/griffinmahoney",
+  linkedin: "https://linkedin.com/in/griffin-mahoney",
   github: "https://github.com/griffinmahoney",
 }
 
