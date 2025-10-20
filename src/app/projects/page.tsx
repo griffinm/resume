@@ -1,12 +1,8 @@
 import Link from 'next/link';
-import { TopNav } from '@/components/TopNav';
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
-      <TopNav />
-      
-      <div className="max-w-5xl mx-auto px-4 py-16 md:py-24">
+    <div className="max-w-5xl mx-auto px-4 py-16 md:py-24">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             My Projects
@@ -101,8 +97,7 @@ export default function ProjectsPage() {
             </div>
           </Link>
         </div>
-      </div>
-    </main>
+    </div>
   );
 }
 

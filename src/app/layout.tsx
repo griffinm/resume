@@ -13,7 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head />
+      <head>
+        <title>Griffin Mahoney</title>
+      </head>
       <body className="antialiased">
         {children}
       </body>
