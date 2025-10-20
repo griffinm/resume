@@ -7,14 +7,14 @@ interface ResumeHeaderProps {
 
 export function ResumeHeader({ personalInfo }: ResumeHeaderProps) {
   return (
-    <header className="bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-6 py-8 md:px-10 md:py-12">
+    <header className="bg-gradient-to-r from-indigo-600 to-blue-500 dark:from-indigo-700 dark:to-blue-600 text-white px-6 py-8 md:px-10 md:py-12">
       <h1 className="text-3xl md:text-5xl font-bold mb-2">{personalInfo.name}</h1>
-      <p className="text-xl md:text-2xl text-indigo-100 mb-6">{personalInfo.title}</p>
+      <p className="text-xl md:text-2xl text-indigo-100 dark:text-indigo-200 mb-6">{personalInfo.title}</p>
       
       <div className="flex flex-wrap gap-4 text-sm md:text-base">
         <div className="flex items-center gap-2">
           <MailIcon size={18} />
-          <a href={`mailto:${personalInfo.email}`} className="hover:text-indigo-200 transition-colors">
+          <a href={`mailto:${personalInfo.email}`} className="hover:text-indigo-200 dark:hover:text-indigo-300 transition-colors">
             {personalInfo.email}
           </a>
         </div>
@@ -34,7 +34,7 @@ export function ResumeHeader({ personalInfo }: ResumeHeaderProps) {
             href={`https://${personalInfo.website}`} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-10 h-10 rounded bg-white/20 hover:bg-white/30 transition-colors"
+            className="inline-flex items-center justify-center w-10 h-10 rounded bg-white/20 hover:bg-white/30 dark:bg-white/10 dark:hover:bg-white/20 transition-colors"
             aria-label="Website"
           >
             <WorldIcon size={20} />
@@ -45,7 +45,7 @@ export function ResumeHeader({ personalInfo }: ResumeHeaderProps) {
             href={`https://${personalInfo.linkedin}`} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-10 h-10 rounded bg-white/20 hover:bg-white/30 transition-colors"
+            className="inline-flex items-center justify-center w-10 h-10 rounded bg-white/20 hover:bg-white/30 dark:bg-white/10 dark:hover:bg-white/20 transition-colors"
             aria-label="LinkedIn"
           >
             <LinkedinIcon size={20} />
@@ -56,7 +56,7 @@ export function ResumeHeader({ personalInfo }: ResumeHeaderProps) {
             href={`https://${personalInfo.github}`} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-10 h-10 rounded bg-white/20 hover:bg-white/30 transition-colors"
+            className="inline-flex items-center justify-center w-10 h-10 rounded bg-white/20 hover:bg-white/30 dark:bg-white/10 dark:hover:bg-white/20 transition-colors"
             aria-label="GitHub"
           >
             <GithubIcon size={20} />

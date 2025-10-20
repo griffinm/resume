@@ -29,11 +29,11 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
         {skills.map((skillGroup, index) => {
           const theme = colorThemes[index % colorThemes.length];
           return (
-            <div key={index} className={`p-4 border ${theme.border} rounded-lg bg-gradient-to-br ${theme.gradient} hover:shadow-md transition-shadow`}>
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">{skillGroup.category}</h3>
+            <div key={index} className={`p-4 border ${theme.border} dark:border-gray-700 rounded-lg bg-gradient-to-br ${theme.gradient} dark:from-gray-800 dark:to-gray-700 hover:shadow-md transition-shadow`}>
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-3">{skillGroup.category}</h3>
               <div className="flex flex-wrap gap-2">
                 {skillGroup.items.map((skill, idx) => (
-                  <span key={idx} className={`px-3 py-1.5 ${theme.bg} ${theme.text} rounded-full text-sm font-medium border ${theme.border}`}>
+                  <span key={idx} className={`px-3 py-1.5 ${theme.bg} ${theme.text} dark:bg-gray-700 dark:text-gray-200 rounded-full text-sm font-medium border ${theme.border} dark:border-gray-600`}>
                     {skill}
                   </span>
                 ))}

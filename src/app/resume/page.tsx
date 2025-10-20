@@ -20,15 +20,15 @@ export default function ResumePage() {
   return (
     <>
       <TopNav />
-      <main className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-0 sm:py-8 px-0 sm:px-4 md:py-12 print:bg-white">
+      <main className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-0 sm:py-8 px-0 sm:px-4 md:py-12 print:bg-white">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white shadow-lg rounded-t-lg print:shadow-none">
+          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-t-lg print:shadow-none">
             <ResumeHeader personalInfo={personalInfo} />
           </div>
 
           <Navigation />
 
-          <div className="bg-white shadow-lg rounded-b-lg print:shadow-none">
+          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-b-lg print:shadow-none">
             <div className="px-6 py-8 md:px-10 md:py-10 flex flex-col gap-8">
             
               <section id="summary">

@@ -2,15 +2,15 @@ import { TopNav, HomeButton } from '@/components';
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       <TopNav />
       
       <div className="max-w-5xl mx-auto px-4 py-0 sm:py-8 mt-[20px] sm:mt-[80px]">
         <div className="text-center mb-4 sm:mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-4">
             Griffin Mahoney&apos;s Portfolio
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Explore my professional experience, skills, and personal projects
           </p>
         </div>

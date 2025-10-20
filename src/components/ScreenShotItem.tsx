@@ -61,11 +61,11 @@ export function ScreenShotItem({
     <>
       <div 
         onClick={() => setIsModalOpen(true)}
-        className={`group bg-white rounded-2xl overflow-hidden border ${colors.border} hover:border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer`}
+        className={`group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border ${colors.border} dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600 shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer`}
       >
         <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
           {/* Image Section - 2/3 width, no padding */}
-          <div className="flex-shrink-0 md:w-2/3 bg-gray-50 overflow-hidden">
+          <div className="flex-shrink-0 md:w-2/3 bg-gray-50 dark:bg-gray-900 overflow-hidden">
             <div className="relative w-full aspect-video">
               <Image
                 src={image}
@@ -78,7 +78,7 @@ export function ScreenShotItem({
           </div>
           
           {/* Content Section - 1/3 width */}
-          <div className={`md:w-1/3 flex flex-col justify-center p-8 space-y-4 ${colors.bg} ${colors.text}`}>
+          <div className={`md:w-1/3 flex flex-col justify-center p-8 space-y-4 ${colors.bg} dark:bg-gray-700 ${colors.text} dark:text-gray-100`}>
             <h3 className="text-xl font-semibold tracking-tight leading-tight">
               {title}
             </h3>
@@ -129,7 +129,7 @@ export function ScreenShotItem({
             </button>
             
             {/* Image */}
-            <div className="relative w-full h-full bg-white rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+            <div className="relative w-full h-full bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
               <Image
                 src={image}
                 alt={alt}
