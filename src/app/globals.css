@@ -1,0 +1,470 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.resume-section-header {
+  @apply text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-gray-300 flex items-center gap-3;
+}
+
+.project-section {
+  @apply bg-white rounded-xl shadow-lg p-8 mb-8
+}
+
+.project-section h2 {
+  @apply text-2xl font-bold text-gray-900 mb-6;
+}
+
+.main-background {
+  @apply bg-gradient-to-br from-gray-50 to-blue-50;
+}
+
+:root {
+  /* Base colors */
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* Blue palette - Professional/Resume */
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  
+  /* Purple palette - Budgeting */
+  --color-purple-50: #faf5ff;
+  --color-purple-100: #f3e8ff;
+  --color-purple-500: #a855f7;
+  --color-purple-600: #9333ea;
+  --color-purple-700: #7e22ce;
+  --color-purple-800: #6b21a8;
+  
+  /* Green palette - Notes */
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  
+  /* Orange palette - Energy/Creativity */
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-orange-700: #c2410c;
+  --color-orange-800: #9a3412;
+  
+  /* Teal palette - Innovation/Technology */
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+  --color-teal-800: #115e59;
+  
+  /* Pink palette - Design/Passion */
+  --color-pink-50: #fdf2f8;
+  --color-pink-100: #fce7f3;
+  --color-pink-500: #ec4899;
+  --color-pink-600: #db2777;
+  --color-pink-700: #be185d;
+  --color-pink-800: #9f1239;
+  
+  /* Indigo palette - Trust/Authority */
+  --color-indigo-50: #eef2ff;
+  --color-indigo-100: #e0e7ff;
+  --color-indigo-500: #6366f1;
+  --color-indigo-600: #4f46e5;
+  --color-indigo-700: #4338ca;
+  --color-indigo-800: #3730a3;
+  
+  /* Gray palette - Neutrals */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Base colors for dark mode */
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    
+    /* Optionally adjust color vibrancy for dark mode */
+    /* You can override specific colors here if needed for dark mode */
+    /* For example, make grays lighter in dark mode: */
+    --color-gray-50: #1f2937;
+    --color-gray-100: #374151;
+    --color-gray-900: #f9fafb;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Print Styles */
+@media print {
+  /* Reset page margins and setup */
+  @page {
+    margin: 0.5in;
+    size: letter;
+  }
+
+  /* Body and root styles */
+  html, body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  /* Remove shadows (but keep backgrounds for colored sections) */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Reset page background to white */
+  .bg-gradient-to-br {
+    background: white !important;
+  }
+
+  .bg-white {
+    background: white !important;
+  }
+
+  /* Main container adjustments */
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Container divs shouldn't cause page breaks */
+  .max-w-5xl,
+  .mx-auto {
+    page-break-inside: auto;
+  }
+
+  /* Wrapper divs around sections */
+  main > div,
+  main > div > div {
+    page-break-before: avoid !important;
+    page-break-after: auto;
+  }
+
+  /* Remove rounded corners for cleaner print */
+  .rounded-t-lg,
+  .rounded-b-lg,
+  .rounded-lg,
+  .rounded,
+  .rounded-md {
+    border-radius: 0 !important;
+  }
+
+  /* Remove any margin/padding from shadow elements that wrap content */
+  .shadow-lg {
+    margin: 0 !important;
+  }
+
+  /* Ensure wrapper divs don't create breaks */
+  .shadow-lg {
+    page-break-inside: auto;
+  }
+
+  .rounded-t-lg {
+    page-break-after: avoid !important;
+    margin-bottom: 0 !important;
+  }
+
+  .rounded-b-lg {
+    page-break-before: avoid !important;
+    margin-top: 0 !important;
+  }
+
+  /* Header - clean black and white for print */
+  header {
+    background: white !important;
+    color: black !important;
+    padding: 0.25in 0.5in 0.2in 0.5in !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    border-bottom: 2px solid #333 !important;
+    margin-bottom: 0 !important;
+  }
+
+  header * {
+    color: black !important;
+  }
+
+  header a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+
+  header h1 {
+    margin-bottom: 0.08in !important;
+  }
+
+  header p {
+    margin-bottom: 0.08in !important;
+  }
+
+  header + * {
+    page-break-before: avoid !important;
+  }
+
+  /* Ensure section headings stay with content */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    color: black !important;
+  }
+
+  /* Keep related content together */
+  section {
+    page-break-inside: avoid;
+  }
+
+  /* Prevent page break after summary section */
+  #summary {
+    page-break-after: avoid;
+  }
+
+  /* Ensure skills section stays with summary */
+  #skills {
+    page-break-before: avoid;
+  }
+
+  /* Prevent orphaned content */
+  p, li, div {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links - show URL in print */
+  a[href]:not([href^="#"])::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666 !important;
+  }
+
+  /* Don't show URLs for email and internal links in header */
+  header a[href]::after {
+    content: none !important;
+  }
+
+  /* Button/icon links shouldn't show URLs */
+  a[aria-label]::after,
+  .inline-flex a::after {
+    content: none !important;
+  }
+
+  /* Ensure proper spacing between sections */
+  section {
+    margin-bottom: 0.2in;
+  }
+
+  /* Work experience and project items */
+  .mb-8, .mb-10 {
+    margin-bottom: 0.15in !important;
+  }
+
+  .mb-6 {
+    margin-bottom: 0.1in !important;
+  }
+
+  .mb-4, .mb-3 {
+    margin-bottom: 0.08in !important;
+  }
+
+  .mb-2 {
+    margin-bottom: 0.05in !important;
+  }
+
+  /* Keep job entries together */
+  article {
+    page-break-inside: avoid;
+  }
+
+  /* Keep divs/cards with borders together */
+  .border {
+    page-break-inside: avoid;
+    border-color: #333 !important;
+  }
+
+  /* Experience cards with rounded borders */
+  .rounded-lg {
+    border: 1px solid #333 !important;
+  }
+
+  /* Grid layouts should stack in print */
+  .grid {
+    display: block !important;
+  }
+
+  .grid > * {
+    margin-bottom: 0.15in;
+  }
+
+  /* Ensure proper text color for body content - all black for printing */
+  .text-gray-700,
+  .text-gray-600,
+  .text-gray-800,
+  .text-gray-900,
+  .text-blue-600,
+  .text-blue-700,
+  .text-teal-600,
+  .text-teal-700,
+  .text-purple-700,
+  .text-orange-700,
+  .text-green-700,
+  .text-pink-700,
+  .text-indigo-100 {
+    color: #000 !important;
+  }
+
+  /* Border colors for printed sections - all black */
+  .border-blue-200,
+  .border-blue-600,
+  .border-teal-200,
+  .border-teal-600,
+  .border-purple-200,
+  .border-orange-200,
+  .border-green-200,
+  .border-pink-200,
+  .border-indigo-200,
+  .border-gray-200 {
+    border-color: #333 !important;
+  }
+
+  /* Section header borders - thicker and black */
+  .border-b-2 {
+    border-bottom-width: 2px !important;
+    border-color: #333 !important;
+  }
+
+  /* Skills and tags - no background colors, just borders */
+  .bg-blue-50, .bg-blue-100,
+  .bg-teal-50, .bg-teal-100,
+  .bg-purple-50, .bg-purple-100,
+  .bg-orange-50, .bg-orange-100,
+  .bg-green-50, .bg-green-100,
+  .bg-pink-50, .bg-pink-100,
+  .bg-indigo-50, .bg-indigo-100,
+  .bg-gray-100 {
+    background: white !important;
+    border: 1px solid #333 !important;
+  }
+
+  /* Ensure badges/tags are visible */
+  span[class*="bg-"] {
+    background: white !important;
+    border: 1px solid #333 !important;
+    padding: 2px 8px !important;
+  }
+
+  /* Work experience card backgrounds */
+  .bg-gradient-to-r.from-blue-50,
+  .bg-gradient-to-br {
+    background: white !important;
+  }
+
+  /* Acquisition badges - keep minimal styling */
+  .bg-gradient-to-r.from-green-500 {
+    background: white !important;
+    color: #333 !important;
+    border: 1px solid #333 !important;
+  }
+
+  .bg-gradient-to-r.from-green-500 * {
+    color: #333 !important;
+  }
+
+  /* Remove interactive states */
+  *:hover,
+  *:focus,
+  *:active {
+    background: inherit !important;
+    color: inherit !important;
+  }
+
+  /* Optimize spacing */
+  .px-6, .px-10 {
+    padding-left: 0.5in !important;
+    padding-right: 0.5in !important;
+  }
+
+  .py-8, .py-10 {
+    padding-top: 0.1in !important;
+    padding-bottom: 0.1in !important;
+  }
+
+  .p-4 {
+    padding: 0.08in !important;
+  }
+
+  .px-4 {
+    padding-left: 0.1in !important;
+    padding-right: 0.1in !important;
+  }
+
+  .py-3, .py-4 {
+    padding-top: 0.05in !important;
+    padding-bottom: 0.05in !important;
+  }
+
+  /* First content section should stick with header */
+  .px-6:first-of-type,
+  .px-10:first-of-type {
+    padding-top: 0.1in !important;
+    page-break-before: avoid !important;
+  }
+
+  /* Icons should be visible */
+  svg {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
+
+  /* Hide screen-only elements */
+  button,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Ensure lists are properly formatted */
+  ul, ol {
+    padding-left: 0.3in;
+  }
+
+  li {
+    page-break-inside: avoid;
+  }
+}
+
