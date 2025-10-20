@@ -1,5 +1,11 @@
 import { TopNav } from '@/components/TopNav';
 import Link from 'next/link';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Color Palette",
+  description: "Explore the complete color system and design palette used throughout Griffin Mahoney's portfolio. View color schemes, gradients, and usage examples for blue, purple, green, orange, teal, pink, and indigo.",
+};
 
 export default function ColorsPage() {
   const colorPalettes = [

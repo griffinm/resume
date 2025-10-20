@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio - Alex Johnson",
-  description: "Portfolio and professional resume of Alex Johnson, a Senior Full Stack Developer with 8+ years of experience in React, Node.js, and cloud architecture. Explore projects and professional experience.",
+  title: {
+    default: "Griffin Mahoney",
+    template: "%s | Griffin Mahoney"
+  },
+  description: "Professional portfolio of Griffin Mahoney, a Software Engineer and Technology Leader. This site contains both a resume and a portfolio of my projects.",
 };
 
 export default function RootLayout({
@@ -13,9 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <title>Griffin Mahoney</title>
-      </head>
+      <head />
       <body className="antialiased">
         {children}
       </body>
