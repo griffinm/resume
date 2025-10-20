@@ -7,10 +7,6 @@ import { SkillsSection } from "@/components/SkillsSection";
 import { WorkExperienceSection } from "@/components/WorkExperienceSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { EducationSection } from "@/components/EducationSection";
-import { CertificationsSection } from "@/components/CertificationsSection";
-import { LanguagesSection } from "@/components/LanguagesSection";
-import { AchievementsSection } from "@/components/AchievementsSection";
-import { VolunteerWorkSection } from "@/components/VolunteerWorkSection";
 
 export default function ResumePage() {
   const { 
@@ -19,14 +15,7 @@ export default function ResumePage() {
     education, 
     skills, 
     projects, 
-    certifications, 
-    languages, 
-    achievements, 
-    volunteerWork 
   } = resumeData;
-  const showCertifications = certifications.length > 0;
-  const showLanguages = languages.length > 0;
-
 
   return (
     <>
@@ -40,7 +29,7 @@ export default function ResumePage() {
           <Navigation />
 
           <div className="bg-white shadow-lg rounded-b-lg print:shadow-none">
-            <div className="px-6 py-8 md:px-10 md:py-10">
+            <div className="px-6 py-8 md:px-10 md:py-10 flex flex-col gap-8">
             
               <section id="summary">
                 <SummarySection summary={personalInfo.summary} />

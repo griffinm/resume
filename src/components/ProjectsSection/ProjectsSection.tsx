@@ -9,11 +9,11 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
   
   return (
     <section className="mb-10">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-purple-600 pb-2 inline-flex items-center gap-2">
+      <h2 className="resume-section-header">
         <svg className="w-6 h-6 text-purple-600" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
-        Featured Projects
+        Side Projects
       </h2>
       <div className="space-y-4">
         {projects.map((project) => (
