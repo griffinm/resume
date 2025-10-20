@@ -6,6 +6,8 @@ interface LanguagesSectionProps {
 }
 
 export function LanguagesSection({ languages }: LanguagesSectionProps) {
+  if (languages.length === 0) return null;
+  
   return (
     <section>
       <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-blue-600 pb-2 inline-block">

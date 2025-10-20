@@ -11,7 +11,7 @@ export const resumeData: Resume = {
     linkedin: "linkedin.com/in/griffin-mahoney",
     github: "github.com/griffinm",
     summary:
-      "Passionate full-stack developer with 8+ years of experience building scalable web applications. Specialized in React, Node.js, and cloud architecture. Strong advocate for clean code, test-driven development, and mentoring junior developers.",
+      "Hands-on engineering leader with a track record of building and scaling high-impact software products from concept to acquisition. Former VP of Engineering and full-stack architect experienced across Node.js, TypeScript, and Rails ecosystems, with deep expertise in cloud infrastructure, data pipelines, and AI-powered systems. Proven success leading distributed teams, designing robust architectures, and driving product innovation across startups and growth-stage companies. Combines strategic vision with technical execution—equally comfortable coding, mentoring, and managing cross-functional stakeholders. Passionate about applying AI and automation to solve real-world problems and deliver lasting value.",
   },
 
   workExperience: [
@@ -70,22 +70,12 @@ export const resumeData: Resume = {
   education: [
     {
       id: "edu-1",
-      institution: "University of California, Berkeley",
+      institution: "Wentworth Institute of Technology",
       degree: "Bachelor of Science",
       field: "Computer Science",
-      startDate: "Aug 2012",
-      endDate: "May 2016",
-      location: "Berkeley, CA",
-      gpa: "3.8/4.0",
-      honors: ["Magna Cum Laude", "Dean's List (6 semesters)"],
-      relevantCourses: [
-        "Data Structures & Algorithms",
-        "Database Systems",
-        "Web Development",
-        "Software Engineering",
-        "Operating Systems",
-        "Computer Networks",
-      ],
+      startDate: "Aug 2005",
+      endDate: "May 2009",
+      location: "Boston, MA",
     },
   ],
 
@@ -97,25 +87,27 @@ export const resumeData: Resume = {
         "Next.js",
         "TypeScript",
         "JavaScript",
-        "HTML5",
-        "CSS3",
+        "WCAG Accessibility",
+        "CSS",
         "Tailwind CSS",
-        "Redux",
-        "Vue.js",
+        "React Query",
+        "Mantine UI",
+        "Shadcn UI",
+        "MUI",
       ],
     },
     {
       category: "Backend",
       items: [
         "Node.js",
-        "Express",
+        "Next.js",
+        "KOA",
         "Python",
-        "Django",
+        "Ruby/Rails",
         "PostgreSQL",
         "MongoDB",
         "Redis",
         "GraphQL",
-        "REST APIs",
       ],
     },
     {
@@ -127,7 +119,6 @@ export const resumeData: Resume = {
         "GCP",
         "CI/CD",
         "Git",
-        "Jenkins",
         "Terraform",
         "Nginx",
       ],
@@ -182,35 +173,8 @@ export const resumeData: Resume = {
     },
   ],
 
-  certifications: [
-    {
-      name: "AWS Certified Solutions Architect - Associate",
-      issuer: "Amazon Web Services",
-      date: "Mar 2023",
-      expiryDate: "Mar 2026",
-      credentialId: "AWS-SA-123456",
-    },
-    {
-      name: "Google Cloud Professional Cloud Architect",
-      issuer: "Google Cloud",
-      date: "Sep 2022",
-      expiryDate: "Sep 2024",
-      credentialId: "GCP-PCA-789012",
-    },
-    {
-      name: "Certified Kubernetes Administrator (CKA)",
-      issuer: "Cloud Native Computing Foundation",
-      date: "Jan 2022",
-      expiryDate: "Jan 2025",
-      credentialId: "CKA-345678",
-    },
-  ],
-
-  languages: [
-    { name: "English", proficiency: "Native" },
-    { name: "Spanish", proficiency: "Professional Working Proficiency" },
-    { name: "Mandarin Chinese", proficiency: "Elementary Proficiency" },
-  ],
+  languages: [],
+  certifications: [],
 
   achievements: [
     {

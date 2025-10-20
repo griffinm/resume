@@ -24,6 +24,9 @@ export default function ResumePage() {
     achievements, 
     volunteerWork 
   } = resumeData;
+  const showCertifications = certifications.length > 0;
+  const showLanguages = languages.length > 0;
+
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-8 px-4 md:py-12 print:bg-white">
@@ -43,10 +46,12 @@ export default function ResumePage() {
 
           <EducationSection education={education} />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-            <CertificationsSection certifications={certifications} />
-            <LanguagesSection languages={languages} />
-          </div>
+          {showCertifications || showLanguages ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+              <CertificationsSection certifications={certifications} />
+              <LanguagesSection languages={languages} />
+            </div>
+          ) : null}
 
           <AchievementsSection achievements={achievements} />
 
