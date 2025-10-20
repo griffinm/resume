@@ -12,6 +12,7 @@ const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
   { href: '/resume', label: 'Resume' },
   { href: '/projects', label: 'Projects' },
+  { href: '/colors', label: 'Colors' },
 ];
 
 export function TopNav() {
