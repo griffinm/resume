@@ -1,5 +1,4 @@
 import { Project } from "@/types/resume";
-import { Badge, Accordion } from "@mantine/core";
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -13,35 +12,35 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
       <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-blue-600 pb-2 inline-block">
         Featured Projects
       </h2>
-      <Accordion variant="separated" chevronPosition="left">
+      <div className="space-y-4">
         {projects.map((project) => (
-          <Accordion.Item key={project.id} value={project.id}>
-            <Accordion.Control>
+          <div key={project.id} className="border border-gray-200 rounded-lg overflow-hidden">
+            <div className="bg-gray-50 p-4 border-b border-gray-200">
               <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
                 <h3 className="text-lg font-semibold text-gray-800">{project.name}</h3>
                 <div className="flex gap-2 flex-wrap">
                   {project.link && (
-                    <Badge variant="light" color="green">
+                    <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs font-medium">
                       🌐 Live
-                    </Badge>
+                    </span>
                   )}
                   {project.github && (
-                    <Badge variant="light" color="gray">
+                    <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium">
                       💻 GitHub
-                    </Badge>
+                    </span>
                   )}
                 </div>
               </div>
-            </Accordion.Control>
-            <Accordion.Panel>
+            </div>
+            <div className="p-4 bg-white">
               <p className="text-gray-700 mb-3">{project.description}</p>
               <div className="mb-3">
                 <p className="text-sm font-semibold text-gray-700 mb-2">Technologies:</p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, idx) => (
-                    <Badge key={idx} variant="filled" color="violet" size="sm">
+                    <span key={idx} className="px-2 py-1 bg-violet-600 text-white rounded text-xs font-medium">
                       {tech}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
               </div>
@@ -50,10 +49,10 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                   <li key={idx} className="text-sm">{highlight}</li>
                 ))}
               </ul>
-            </Accordion.Panel>
-          </Accordion.Item>
+            </div>
+          </div>
         ))}
-      </Accordion>
+      </div>
     </section>
   );
 }

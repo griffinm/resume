@@ -1,5 +1,4 @@
 import { VolunteerWork } from "@/types/resume";
-import { Accordion } from "@mantine/core";
 
 interface VolunteerWorkSectionProps {
   volunteerWork: VolunteerWork[];
@@ -13,10 +12,10 @@ export function VolunteerWorkSection({ volunteerWork }: VolunteerWorkSectionProp
       <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-blue-600 pb-2 inline-block">
         Volunteer Work
       </h2>
-      <Accordion variant="separated" chevronPosition="left">
+      <div className="space-y-4">
         {volunteerWork.map((work) => (
-          <Accordion.Item key={work.id} value={work.id}>
-            <Accordion.Control>
+          <div key={work.id} className="border border-gray-200 rounded-lg overflow-hidden">
+            <div className="bg-gray-50 p-4 border-b border-gray-200">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800">{work.role}</h3>
@@ -26,18 +25,18 @@ export function VolunteerWorkSection({ volunteerWork }: VolunteerWorkSectionProp
                   <p>{work.startDate} - {work.endDate}</p>
                 </div>
               </div>
-            </Accordion.Control>
-            <Accordion.Panel>
+            </div>
+            <div className="p-4 bg-white">
               <p className="text-gray-700 mb-3">{work.description}</p>
               <ul className="list-disc list-inside space-y-1 text-gray-700">
                 {work.achievements.map((achievement, idx) => (
                   <li key={idx} className="text-sm">{achievement}</li>
                 ))}
               </ul>
-            </Accordion.Panel>
-          </Accordion.Item>
+            </div>
+          </div>
         ))}
-      </Accordion>
+      </div>
     </section>
   );
 }

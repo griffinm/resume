@@ -1,5 +1,4 @@
 import { Skill } from "@/types/resume";
-import { Badge, Paper } from "@mantine/core";
 
 interface SkillsSectionProps {
   skills: Skill[];
@@ -15,16 +14,16 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {skills.map((skillGroup, index) => (
-          <Paper key={index} p="md" withBorder className="hover:shadow-md transition-shadow">
+          <div key={index} className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
             <h3 className="text-lg font-semibold text-gray-800 mb-3">{skillGroup.category}</h3>
             <div className="flex flex-wrap gap-2">
               {skillGroup.items.map((skill, idx) => (
-                <Badge key={idx} variant="light" color="blue" size="lg">
+                <span key={idx} className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
                   {skill}
-                </Badge>
+                </span>
               ))}
             </div>
-          </Paper>
+          </div>
         ))}
       </div>
     </section>

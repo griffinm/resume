@@ -1,5 +1,4 @@
 import { Achievement } from "@/types/resume";
-import { Badge, Paper } from "@mantine/core";
 
 interface AchievementsSectionProps {
   achievements: Achievement[];
@@ -15,15 +14,15 @@ export function AchievementsSection({ achievements }: AchievementsSectionProps) 
       </h2>
       <div className="space-y-3">
         {achievements.map((achievement) => (
-          <Paper key={achievement.id} p="md" withBorder>
+          <div key={achievement.id} className="p-4 border border-gray-200 rounded-lg">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
               <div className="flex-1">
                 <h3 className="font-semibold text-gray-800 mb-1">{achievement.title}</h3>
                 <p className="text-sm text-gray-700">{achievement.description}</p>
               </div>
-              <Badge variant="light" color="violet">{achievement.date}</Badge>
+              <span className="px-3 py-1 bg-violet-50 text-violet-700 rounded-full text-sm font-medium whitespace-nowrap">{achievement.date}</span>
             </div>
-          </Paper>
+          </div>
         ))}
       </div>
     </section>

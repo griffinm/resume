@@ -1,7 +1,6 @@
-"use client";
-
 import { resumeData } from "@/data/resume";
 import { ResumeHeader } from "@/components/ResumeHeader";
+import { Navigation } from "@/components/Navigation";
 import { SummarySection } from "@/components/SummarySection";
 import { SkillsSection } from "@/components/SkillsSection";
 import { WorkExperienceSection } from "@/components/WorkExperienceSection";
@@ -29,34 +28,55 @@ export default function ResumePage() {
 
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-8 px-4 md:py-12 print:bg-white">
-      <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden print:shadow-none">
-        
-        <ResumeHeader personalInfo={personalInfo} />
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-0 sm:py-8 px-0 sm:px-4 md:py-12 print:bg-white">
+      <div className="max-w-5xl mx-auto">
+        <div className="bg-white shadow-lg rounded-t-lg print:shadow-none">
+          <ResumeHeader personalInfo={personalInfo} />
+        </div>
 
-        <div className="px-6 py-8 md:px-10 md:py-10">
+        <Navigation />
+
+        <div className="bg-white shadow-lg rounded-b-lg print:shadow-none">
+          <div className="px-6 py-8 md:px-10 md:py-10">
           
-          <SummarySection summary={personalInfo.summary} />
+          <section id="summary">
+            <SummarySection summary={personalInfo.summary} />
+          </section>
 
-          <SkillsSection skills={skills} />
+          <section id="skills">
+            <SkillsSection skills={skills} />
+          </section>
 
-          <WorkExperienceSection workExperience={workExperience} />
+          <section id="experience">
+            <WorkExperienceSection workExperience={workExperience} />
+          </section>
 
-          <ProjectsSection projects={projects} />
+          <section id="projects">
+            <ProjectsSection projects={projects} />
+          </section>
 
-          <EducationSection education={education} />
+          <section id="education">
+            <EducationSection education={education} />
+          </section>
 
           {showCertifications || showLanguages ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-              <CertificationsSection certifications={certifications} />
-              <LanguagesSection languages={languages} />
-            </div>
+            <section id="certifications">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <CertificationsSection certifications={certifications} />
+                <LanguagesSection languages={languages} />
+              </div>
+            </section>
           ) : null}
 
-          <AchievementsSection achievements={achievements} />
+          <section id="achievements">
+            <AchievementsSection achievements={achievements} />
+          </section>
 
-          <VolunteerWorkSection volunteerWork={volunteerWork} />
+          <section id="volunteer">
+            <VolunteerWorkSection volunteerWork={volunteerWork} />
+          </section>
 
+          </div>
         </div>
       </div>
     </main>

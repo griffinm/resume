@@ -1,5 +1,4 @@
 import { Certification } from "@/types/resume";
-import { Paper } from "@mantine/core";
 
 interface CertificationsSectionProps {
   certifications: Certification[];
@@ -15,14 +14,14 @@ export function CertificationsSection({ certifications }: CertificationsSectionP
       </h2>
       <div className="space-y-3">
         {certifications.map((cert, index) => (
-          <Paper key={index} p="md" withBorder>
+          <div key={index} className="p-4 border border-gray-200 rounded-lg">
             <h3 className="font-semibold text-gray-800 text-sm mb-1">{cert.name}</h3>
             <p className="text-xs text-blue-600 mb-1">{cert.issuer}</p>
             <p className="text-xs text-gray-600">Issued: {cert.date}</p>
             {cert.expiryDate && (
               <p className="text-xs text-gray-600">Expires: {cert.expiryDate}</p>
             )}
-          </Paper>
+          </div>
         ))}
       </div>
     </section>

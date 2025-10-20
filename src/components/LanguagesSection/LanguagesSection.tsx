@@ -1,5 +1,4 @@
 import { Language } from "@/types/resume";
-import { Badge, Paper } from "@mantine/core";
 
 interface LanguagesSectionProps {
   languages: Language[];
@@ -15,12 +14,12 @@ export function LanguagesSection({ languages }: LanguagesSectionProps) {
       </h2>
       <div className="space-y-3">
         {languages.map((lang, index) => (
-          <Paper key={index} p="md" withBorder>
+          <div key={index} className="p-4 border border-gray-200 rounded-lg">
             <div className="flex justify-between items-center">
               <h3 className="font-semibold text-gray-800">{lang.name}</h3>
-              <Badge variant="light" color="blue">{lang.proficiency}</Badge>
+              <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">{lang.proficiency}</span>
             </div>
-          </Paper>
+          </div>
         ))}
       </div>
     </section>

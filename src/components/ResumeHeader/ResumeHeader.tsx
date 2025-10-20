@@ -1,5 +1,4 @@
 import { PersonalInfo } from "@/types/resume";
-import { ActionIcon } from "@mantine/core";
 import { MailIcon, PhoneIcon, MapPinIcon, WorldIcon, LinkedinIcon, GithubIcon } from "../Icons";
 
 interface ResumeHeaderProps {
@@ -31,19 +30,37 @@ export function ResumeHeader({ personalInfo }: ResumeHeaderProps) {
       
       <div className="flex gap-3 mt-4">
         {personalInfo.website && (
-          <ActionIcon component="a" href={`https://${personalInfo.website}`} target="_blank" size="lg" variant="light" color="white">
+          <a 
+            href={`https://${personalInfo.website}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center w-10 h-10 rounded bg-white/20 hover:bg-white/30 transition-colors"
+            aria-label="Website"
+          >
             <WorldIcon size={20} />
-          </ActionIcon>
+          </a>
         )}
         {personalInfo.linkedin && (
-          <ActionIcon component="a" href={`https://${personalInfo.linkedin}`} target="_blank" size="lg" variant="light" color="white">
+          <a 
+            href={`https://${personalInfo.linkedin}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center w-10 h-10 rounded bg-white/20 hover:bg-white/30 transition-colors"
+            aria-label="LinkedIn"
+          >
             <LinkedinIcon size={20} />
-          </ActionIcon>
+          </a>
         )}
         {personalInfo.github && (
-          <ActionIcon component="a" href={`https://${personalInfo.github}`} target="_blank" size="lg" variant="light" color="white">
+          <a 
+            href={`https://${personalInfo.github}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center w-10 h-10 rounded bg-white/20 hover:bg-white/30 transition-colors"
+            aria-label="GitHub"
+          >
             <GithubIcon size={20} />
-          </ActionIcon>
+          </a>
         )}
       </div>
     </header>

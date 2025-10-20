@@ -1,5 +1,4 @@
 import { Education } from "@/types/resume";
-import { Badge, Paper } from "@mantine/core";
 
 interface EducationSectionProps {
   education: Education[];
@@ -14,7 +13,7 @@ export function EducationSection({ education }: EducationSectionProps) {
         Education
       </h2>
       {education.map((edu) => (
-        <Paper key={edu.id} p="lg" withBorder className="mb-4">
+        <div key={edu.id} className="p-6 border border-gray-200 rounded-lg mb-4">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-3">
             <div>
               <h3 className="text-lg font-semibold text-gray-800">{edu.degree} in {edu.field}</h3>
@@ -31,9 +30,9 @@ export function EducationSection({ education }: EducationSectionProps) {
               <p className="text-sm font-semibold text-gray-700 mb-1">Honors:</p>
               <div className="flex flex-wrap gap-2">
                 {edu.honors.map((honor, idx) => (
-                  <Badge key={idx} variant="light" color="violet">
+                  <span key={idx} className="px-3 py-1 bg-violet-50 text-violet-700 rounded-full text-sm font-medium">
                     {honor}
-                  </Badge>
+                  </span>
                 ))}
               </div>
             </div>
@@ -44,7 +43,7 @@ export function EducationSection({ education }: EducationSectionProps) {
               <p className="text-sm text-gray-600">{edu.relevantCourses.join(", ")}</p>
             </div>
           )}
-        </Paper>
+        </div>
       ))}
     </section>
   );

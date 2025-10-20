@@ -1,4 +1,5 @@
 export { ResumeHeader } from "./ResumeHeader";
+export { Navigation } from "./Navigation";
 export { SummarySection } from "./SummarySection";
 export { SkillsSection } from "./SkillsSection";
 export { WorkExperienceSection } from "./WorkExperienceSection";
