@@ -13,9 +13,6 @@ const navItems: NavItem[] = [
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'education', label: 'Education' },
-  { id: 'certifications', label: 'Certifications' },
-  { id: 'achievements', label: 'Achievements' },
-  { id: 'volunteer', label: 'Volunteer' },
 ];
 
 export function Navigation() {
@@ -46,7 +43,7 @@ export function Navigation() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 70; // Account for sticky nav height
+      const offset = 120; // Account for both TopNav and Navigation height
       const elementPosition = element.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({
         top: elementPosition,
@@ -57,9 +54,13 @@ export function Navigation() {
     }
   };
 
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
     <nav 
-      className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md print:hidden"
+      className="sticky top-[45px] z-40 bg-white border-b border-gray-200 shadow-md print:hidden"
     >
       <div className="max-w-5xl mx-auto px-4 py-3">
         {/* Mobile hamburger button */}
@@ -106,6 +107,18 @@ export function Navigation() {
               </button>
             </li>
           ))}
+          <li>
+            <button
+              onClick={handlePrint}
+              className="px-3 py-1.5 text-sm font-medium rounded-md transition-colors duration-200 bg-green-600 text-white hover:bg-green-700 flex items-center gap-1.5"
+              aria-label="Print resume"
+            >
+              <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+              </svg>
+              Print
+            </button>
+          </li>
         </ul>
 
         {/* Mobile dropdown menu */}
@@ -126,6 +139,18 @@ export function Navigation() {
                   </button>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={handlePrint}
+                  className="w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 bg-green-600 text-white hover:bg-green-700 flex items-center gap-1.5"
+                  aria-label="Print resume"
+                >
+                  <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                  </svg>
+                  Print Resume
+                </button>
+              </li>
             </ul>
           </div>
         )}

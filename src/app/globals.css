@@ -107,3 +107,348 @@ body {
   }
 }
 
+/* Print Styles */
+@media print {
+  /* Reset page margins and setup */
+  @page {
+    margin: 0.5in;
+    size: letter;
+  }
+
+  /* Body and root styles */
+  html, body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  /* Remove shadows (but keep backgrounds for colored sections) */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Reset page background to white */
+  .bg-gradient-to-br {
+    background: white !important;
+  }
+
+  .bg-white {
+    background: white !important;
+  }
+
+  /* Main container adjustments */
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Container divs shouldn't cause page breaks */
+  .max-w-5xl,
+  .mx-auto {
+    page-break-inside: auto;
+  }
+
+  /* Wrapper divs around sections */
+  main > div,
+  main > div > div {
+    page-break-before: avoid !important;
+    page-break-after: auto;
+  }
+
+  /* Remove rounded corners for cleaner print */
+  .rounded-t-lg,
+  .rounded-b-lg,
+  .rounded-lg,
+  .rounded,
+  .rounded-md {
+    border-radius: 0 !important;
+  }
+
+  /* Remove any margin/padding from shadow elements that wrap content */
+  .shadow-lg {
+    margin: 0 !important;
+  }
+
+  /* Ensure wrapper divs don't create breaks */
+  .shadow-lg {
+    page-break-inside: auto;
+  }
+
+  .rounded-t-lg {
+    page-break-after: avoid !important;
+    margin-bottom: 0 !important;
+  }
+
+  .rounded-b-lg {
+    page-break-before: avoid !important;
+    margin-top: 0 !important;
+  }
+
+  /* Header - clean black and white for print */
+  header {
+    background: white !important;
+    color: black !important;
+    padding: 0.25in 0.5in 0.2in 0.5in !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    border-bottom: 2px solid #333 !important;
+    margin-bottom: 0 !important;
+  }
+
+  header * {
+    color: black !important;
+  }
+
+  header a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+
+  header h1 {
+    margin-bottom: 0.08in !important;
+  }
+
+  header p {
+    margin-bottom: 0.08in !important;
+  }
+
+  header + * {
+    page-break-before: avoid !important;
+  }
+
+  /* Ensure section headings stay with content */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    color: black !important;
+  }
+
+  /* Keep related content together */
+  section {
+    page-break-inside: avoid;
+  }
+
+  /* Prevent page break after summary section */
+  #summary {
+    page-break-after: avoid;
+  }
+
+  /* Ensure skills section stays with summary */
+  #skills {
+    page-break-before: avoid;
+  }
+
+  /* Prevent orphaned content */
+  p, li, div {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links - show URL in print */
+  a[href]:not([href^="#"])::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666 !important;
+  }
+
+  /* Don't show URLs for email and internal links in header */
+  header a[href]::after {
+    content: none !important;
+  }
+
+  /* Button/icon links shouldn't show URLs */
+  a[aria-label]::after,
+  .inline-flex a::after {
+    content: none !important;
+  }
+
+  /* Ensure proper spacing between sections */
+  section {
+    margin-bottom: 0.2in;
+  }
+
+  /* Work experience and project items */
+  .mb-8, .mb-10 {
+    margin-bottom: 0.15in !important;
+  }
+
+  .mb-6 {
+    margin-bottom: 0.1in !important;
+  }
+
+  .mb-4, .mb-3 {
+    margin-bottom: 0.08in !important;
+  }
+
+  .mb-2 {
+    margin-bottom: 0.05in !important;
+  }
+
+  /* Keep job entries together */
+  article {
+    page-break-inside: avoid;
+  }
+
+  /* Keep divs/cards with borders together */
+  .border {
+    page-break-inside: avoid;
+    border-color: #333 !important;
+  }
+
+  /* Experience cards with rounded borders */
+  .rounded-lg {
+    border: 1px solid #333 !important;
+  }
+
+  /* Grid layouts should stack in print */
+  .grid {
+    display: block !important;
+  }
+
+  .grid > * {
+    margin-bottom: 0.15in;
+  }
+
+  /* Ensure proper text color for body content - all black for printing */
+  .text-gray-700,
+  .text-gray-600,
+  .text-gray-800,
+  .text-gray-900,
+  .text-blue-600,
+  .text-blue-700,
+  .text-teal-600,
+  .text-teal-700,
+  .text-purple-700,
+  .text-orange-700,
+  .text-green-700,
+  .text-pink-700,
+  .text-indigo-100 {
+    color: #000 !important;
+  }
+
+  /* Border colors for printed sections - all black */
+  .border-blue-200,
+  .border-blue-600,
+  .border-teal-200,
+  .border-teal-600,
+  .border-purple-200,
+  .border-orange-200,
+  .border-green-200,
+  .border-pink-200,
+  .border-indigo-200,
+  .border-gray-200 {
+    border-color: #333 !important;
+  }
+
+  /* Section header borders - thicker and black */
+  .border-b-2 {
+    border-bottom-width: 2px !important;
+    border-color: #333 !important;
+  }
+
+  /* Skills and tags - no background colors, just borders */
+  .bg-blue-50, .bg-blue-100,
+  .bg-teal-50, .bg-teal-100,
+  .bg-purple-50, .bg-purple-100,
+  .bg-orange-50, .bg-orange-100,
+  .bg-green-50, .bg-green-100,
+  .bg-pink-50, .bg-pink-100,
+  .bg-indigo-50, .bg-indigo-100,
+  .bg-gray-100 {
+    background: white !important;
+    border: 1px solid #333 !important;
+  }
+
+  /* Ensure badges/tags are visible */
+  span[class*="bg-"] {
+    background: white !important;
+    border: 1px solid #333 !important;
+    padding: 2px 8px !important;
+  }
+
+  /* Work experience card backgrounds */
+  .bg-gradient-to-r.from-blue-50,
+  .bg-gradient-to-br {
+    background: white !important;
+  }
+
+  /* Acquisition badges - keep minimal styling */
+  .bg-gradient-to-r.from-green-500 {
+    background: white !important;
+    color: #333 !important;
+    border: 1px solid #333 !important;
+  }
+
+  .bg-gradient-to-r.from-green-500 * {
+    color: #333 !important;
+  }
+
+  /* Remove interactive states */
+  *:hover,
+  *:focus,
+  *:active {
+    background: inherit !important;
+    color: inherit !important;
+  }
+
+  /* Optimize spacing */
+  .px-6, .px-10 {
+    padding-left: 0.5in !important;
+    padding-right: 0.5in !important;
+  }
+
+  .py-8, .py-10 {
+    padding-top: 0.1in !important;
+    padding-bottom: 0.1in !important;
+  }
+
+  .p-4 {
+    padding: 0.08in !important;
+  }
+
+  .px-4 {
+    padding-left: 0.1in !important;
+    padding-right: 0.1in !important;
+  }
+
+  .py-3, .py-4 {
+    padding-top: 0.05in !important;
+    padding-bottom: 0.05in !important;
+  }
+
+  /* First content section should stick with header */
+  .px-6:first-of-type,
+  .px-10:first-of-type {
+    padding-top: 0.1in !important;
+    page-break-before: avoid !important;
+  }
+
+  /* Icons should be visible */
+  svg {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
+
+  /* Hide screen-only elements */
+  button,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Ensure lists are properly formatted */
+  ul, ol {
+    padding-left: 0.3in;
+  }
+
+  li {
+    page-break-inside: avoid;
+  }
+}
+

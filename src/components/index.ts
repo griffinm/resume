@@ -10,4 +10,5 @@ export { CertificationsSection } from "./CertificationsSection";
 export { LanguagesSection } from "./LanguagesSection";
 export { AchievementsSection } from "./AchievementsSection";
 export { VolunteerWorkSection } from "./VolunteerWorkSection";
+export { HomeButton } from "./HomeButton";
 export * from "./Icons";

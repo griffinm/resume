@@ -9,23 +9,26 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
   
   return (
     <section className="mb-10">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-blue-600 pb-2 inline-block">
+      <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-purple-600 pb-2 inline-flex items-center gap-2">
+        <svg className="w-6 h-6 text-purple-600" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
         Featured Projects
       </h2>
       <div className="space-y-4">
         {projects.map((project) => (
-          <div key={project.id} className="border border-gray-200 rounded-lg overflow-hidden">
-            <div className="bg-gray-50 p-4 border-b border-gray-200">
+          <div key={project.id} className="border border-purple-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-4 border-b border-purple-200">
               <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
                 <h3 className="text-lg font-semibold text-gray-800">{project.name}</h3>
                 <div className="flex gap-2 flex-wrap">
                   {project.link && (
-                    <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs font-medium">
+                    <span className="px-3 py-1.5 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-full text-xs font-semibold shadow-sm">
                       🌐 Live
                     </span>
                   )}
                   {project.github && (
-                    <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium">
+                    <span className="px-3 py-1.5 bg-gray-700 text-white rounded-full text-xs font-semibold shadow-sm">
                       💻 GitHub
                     </span>
                   )}
@@ -38,7 +41,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                 <p className="text-sm font-semibold text-gray-700 mb-2">Technologies:</p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, idx) => (
-                    <span key={idx} className="px-2 py-1 bg-violet-600 text-white rounded text-xs font-medium">
+                    <span key={idx} className="px-3 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full text-xs font-semibold shadow-sm">
                       {tech}
                     </span>
                   ))}
