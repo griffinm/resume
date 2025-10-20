@@ -1,5 +1,6 @@
 export { ResumeHeader } from "./ResumeHeader";
 export { Navigation } from "./Navigation";
+export { TopNav } from "./TopNav";
 export { SummarySection } from "./SummarySection";
 export { SkillsSection } from "./SkillsSection";
 export { WorkExperienceSection } from "./WorkExperienceSection";
