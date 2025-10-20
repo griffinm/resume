@@ -7,7 +7,7 @@ interface ResumeHeaderProps {
 
 export function ResumeHeader({ personalInfo }: ResumeHeaderProps) {
   return (
-    <header className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white px-6 py-8 md:px-10 md:py-12">
+    <header className="bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-6 py-8 md:px-10 md:py-12">
       <h1 className="text-3xl md:text-5xl font-bold mb-2">{personalInfo.name}</h1>
       <p className="text-xl md:text-2xl text-indigo-100 mb-6">{personalInfo.title}</p>
       

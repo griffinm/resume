@@ -7,7 +7,7 @@ export const resumeData: Resume = {
     email: "griffin@griffinmahoney.com",
     phone: "+1 (617) 652-0496",
     location: "Boston, MA",
-    website: "https://griffinmahoney.com",
+    website: "griffinmahoney.com",
     linkedin: "linkedin.com/in/griffin-mahoney",
     github: "github.com/griffinm",
     summary:
@@ -103,19 +103,25 @@ export const resumeData: Resume = {
 
   skills: [
     {
-      category: "Frontend",
+      category: "Leadership & Management",
       items: [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "JavaScript",
-        "WCAG Accessibility",
-        "CSS",
-        "Tailwind CSS",
-        "React Query",
-        "Mantine UI",
-        "Shadcn UI",
-        "MUI",
+        "Hiring and Recruiting",
+        "Building Offshore Teams",
+        "Creating a culture of innovation",
+        "Agile",
+        "Technology and Business Strategy",
+      ],
+    },
+    {
+      category: "AI",
+      items: [
+        "LangChain/Vercel AI SDK",
+        "Model Fine Tuning (LoRA, etc.)",
+        "RAG and Vector Databases",
+        "Agent Design and Deployment",
+        "Stable Diffusion",
+        "CUDA",
+        "AI Infrastructure"
       ],
     },
     {
@@ -133,21 +139,34 @@ export const resumeData: Resume = {
       ],
     },
     {
+      category: "Frontend",
+      items: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "WCAG Accessibility",
+        "CSS",
+        "Tailwind CSS",
+        "React Query",
+        "Mantine UI",
+        "Shadcn UI",
+        "MUI",
+      ],
+    },
+    {
       category: "DevOps & Tools",
       items: [
         "Docker",
         "Kubernetes",
         "AWS",
+        "Network Engineering + Security",
         "GCP",
         "CI/CD",
         "Git",
         "Terraform",
         "Nginx",
       ],
-    },
-    {
-      category: "Testing",
-      items: ["Jest", "React Testing Library", "Cypress", "Playwright", "Unit Testing", "E2E Testing"],
     },
   ],
 
