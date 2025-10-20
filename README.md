@@ -1,6 +1,15 @@
 # Resume App
 
-A modern web application built with Next.js 14 (App Router) and TailwindCSS.
+A modern, responsive resume web application built with Next.js 15, featuring a clean design with expandable sections and comprehensive professional information.
+
+## Features
+
+- 📱 **Fully Responsive** - Mobile and desktop optimized layouts
+- 🎨 **Modern Design** - Clean interface with tasteful color accents (blue and violet theme)
+- 📂 **Expandable Sections** - Accordion components for detailed content (work experience, projects, volunteer work)
+- 💼 **Comprehensive Resume** - All standard sections including work experience, education, skills, projects, certifications, achievements, and more
+- 🎯 **Type-Safe** - Full TypeScript support with strongly typed resume data
+- 🖨️ **Print-Friendly** - Optimized for printing
 
 ## Getting Started
 
@@ -24,40 +33,21 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the resume.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customizing Your Resume
+
+To customize the resume with your own information:
+
+1. Edit `src/data/resume.ts` - Update all the resume data with your personal information
+2. The types are defined in `src/types/resume.ts` - Modify these if you need different data structures
+3. The page layout is in `src/app/page.tsx` - Customize the design and sections as needed
 
 ## Tech Stack
 
-- **Next.js 15** - React framework with App Router
-- **TailwindCSS** - Utility-first CSS framework
-- **TypeScript** - Type-safe JavaScript
+- **Next.js 15** - React framework with App Router and SSR
 - **React 19** - JavaScript library for building user interfaces
-
-## Project Structure
-
-```
-.
-├── app/
-│   ├── globals.css      # Global styles with Tailwind directives
-│   ├── layout.tsx       # Root layout component
-│   └── page.tsx         # Home page
-├── package.json
-├── tailwind.config.ts   # Tailwind configuration
-├── tsconfig.json        # TypeScript configuration
-└── next.config.mjs      # Next.js configuration
-```
-
-## Learn More
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [TailwindCSS Documentation](https://tailwindcss.com/docs)
-- [React Documentation](https://react.dev)
+- **TailwindCSS** - Utility-first CSS framework for layout and styling
+- **Mantine v7** - React components library (Badges, Accordions, Paper, ActionIcon)
 
 ## Deploy
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
-
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
