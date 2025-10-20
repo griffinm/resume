@@ -19,6 +19,10 @@ export interface WorkExperience {
   location: string;
   description: string;
   achievements: string[];
+  acquisition?: {
+    acquirer: string;
+    year: number;
+  };
 }
 
 export interface Education {

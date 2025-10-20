@@ -19,7 +19,15 @@ export function WorkExperienceSection({ workExperience }: WorkExperienceSectionP
               <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800">{job.role}</h3>
-                  <p className="text-blue-600 font-medium">{job.company}</p>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <p className="text-blue-600 font-medium">{job.company}</p>
+                    {job.acquisition && (
+                      <span className="inline-flex items-center gap-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                        <span>🎯</span>
+                        <span>Acquired by {job.acquisition.acquirer} ({job.acquisition.year})</span>
+                      </span>
+                    )}
+                  </div>
                 </div>
                 <div className="text-sm text-gray-600 md:text-right">
                   <p>{job.startDate} - {job.endDate}</p>
