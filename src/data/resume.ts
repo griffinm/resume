@@ -3,7 +3,7 @@ import { Resume } from "@/types/resume";
 export const resumeData: Resume = {
   personalInfo: {
     name: "Griffin Mahoney",
-    title: "Software Engineer | Technicology Leader",
+    title: "Software Engineer | Technology Leader",
     email: "griffin@griffinmahoney.com",
     phone: "+1 (617) 652-0496",
     location: "Boston, MA",
