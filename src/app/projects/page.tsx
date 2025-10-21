@@ -1,4 +1,10 @@
 import Link from 'next/link';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "A collection of personal projects built by Griffin Mahoney, including a budgeting app for personal finance management and a notes application for organization and note-taking.",
+};
 
 export default function ProjectsPage() {
   return (

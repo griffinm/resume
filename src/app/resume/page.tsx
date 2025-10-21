@@ -7,6 +7,12 @@ import { SkillsSection } from "@/components/SkillsSection";
 import { WorkExperienceSection } from "@/components/WorkExperienceSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { EducationSection } from "@/components/EducationSection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Resume",
+  description: "Professional resume showcasing Griffin Mahoney's work experience, technical skills, projects, and education. View detailed information about software engineering expertise and leadership experience.",
+};
 
 export default function ResumePage() {
   const { 
