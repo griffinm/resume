@@ -1,4 +1,8 @@
-version: '3.8'
+networks:
+  prod:
+    name: prod
+    driver: bridge
+    external: true
 
 services:
   resume:
@@ -8,8 +12,10 @@ services:
     image: resume:latest
     container_name: resume-app
     ports:
-      - "3000:3000"
+      - "10100:3000"
     restart: unless-stopped
+    networks:
+      - prod
     environment:
       - NODE_ENV=production
       - HOSTNAME=0.0.0.0
