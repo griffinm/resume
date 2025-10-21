@@ -12,7 +12,7 @@ services:
     image: griffinmahoney-com/resume:latest
     container_name: resume-app
     ports:
-      - "10100:3000"
+      - "10100:10100"
     restart: unless-stopped
     networks:
       - prod
