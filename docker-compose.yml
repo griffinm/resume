@@ -9,7 +9,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: resume:latest
+    image: griffinmahoney-com/resume:latest
     container_name: resume-app
     ports:
       - "10100:3000"
