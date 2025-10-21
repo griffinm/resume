@@ -1,3 +1,5 @@
+import TryNow from './_try-now';
+
 export function Header() {
   return (
     <div className="project-section">
@@ -24,6 +26,10 @@ export function Header() {
         I have used many note taking apps over the years, but I could never find one single app that had all
         of the features I wanted. So I decided to build my own.
       </p>
+
+      <div className="mt-6 flex justify-center">
+        <TryNow />
+      </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ export default function ProjectsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="main-background">
+    <main className="main-background min-h-screen">
       <TopNav />
       {children}
     </main>

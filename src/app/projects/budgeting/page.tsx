@@ -3,6 +3,7 @@ import { Features } from './features';
 import { BackButton } from '@/components/ProjectPage/BackButton';
 import { ScreenShots } from './screen-shots';
 import type { Metadata } from "next";
+import Demo from './_demo';
 
 export const metadata: Metadata = {
   title: "Budgeting Project",
@@ -17,6 +18,8 @@ export default function BudgetingPage() {
       </div>
 
       <Header />
+
+      <Demo />
 
       <Features />
 
