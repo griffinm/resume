@@ -1,7 +1,8 @@
-
 networks:
   prod:
+    name: prod
     driver: bridge
+    external: true
 
 services:
   resume:
