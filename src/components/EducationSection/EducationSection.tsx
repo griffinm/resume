@@ -18,24 +18,24 @@ export function EducationSection({ education }: EducationSectionProps) {
         Education
       </h2>
       {education.map((edu) => (
-        <div key={edu.id} className="p-6 border border-green-200 dark:border-gray-700 rounded-lg mb-4 bg-gradient-to-br from-green-50 to-teal-50 dark:from-gray-800 dark:to-gray-700 hover:shadow-lg transition-shadow">
+        <div key={edu.id} className="p-6 border border-green-200 rounded-lg mb-4 bg-gradient-to-br from-green-50 to-teal-50 hover:shadow-lg transition-shadow">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-3">
             <div>
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100">{edu.degree} in {edu.field}</h3>
-              <p className="text-green-600 dark:text-green-400 font-medium">{edu.institution}</p>
-              {edu.gpa && <p className="text-sm text-gray-600 dark:text-gray-400">GPA: {edu.gpa}</p>}
+              <h3 className="text-lg font-semibold text-gray-800">{edu.degree} in {edu.field}</h3>
+              <p className="text-green-600 font-medium">{edu.institution}</p>
+              {edu.gpa && <p className="text-sm text-gray-600">GPA: {edu.gpa}</p>}
             </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400 md:text-right">
+            <div className="text-sm text-gray-600 md:text-right">
               <p>{edu.startDate} - {edu.endDate}</p>
               <p>{edu.location}</p>
             </div>
           </div>
           {edu.honors && edu.honors.length > 0 && (
             <div className="mb-3">
-              <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Honors:</p>
+              <p className="text-sm font-semibold text-gray-700 mb-1">Honors:</p>
               <div className="flex flex-wrap gap-2">
                 {edu.honors.map((honor, idx) => (
-                  <span key={idx} className="px-3 py-1.5 bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-700 dark:to-teal-700 text-white rounded-full text-sm font-semibold shadow-sm">
+                  <span key={idx} className="px-3 py-1.5 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-full text-sm font-semibold shadow-sm">
                     {honor}
                   </span>
                 ))}
@@ -44,8 +44,8 @@ export function EducationSection({ education }: EducationSectionProps) {
           )}
           {edu.relevantCourses && edu.relevantCourses.length > 0 && (
             <div>
-              <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Relevant Coursework:</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{edu.relevantCourses.join(", ")}</p>
+              <p className="text-sm font-semibold text-gray-700 mb-1">Relevant Coursework:</p>
+              <p className="text-sm text-gray-600">{edu.relevantCourses.join(", ")}</p>
             </div>
           )}
         </div>

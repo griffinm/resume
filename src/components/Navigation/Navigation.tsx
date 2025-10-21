@@ -60,21 +60,21 @@ export function Navigation() {
 
   return (
     <nav 
-      className="sticky top-[45px] z-40 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-md print:hidden"
+      className="sticky top-[45px] z-40 bg-white border-b border-gray-200 shadow-md print:hidden"
     >
       <div className="max-w-5xl mx-auto px-4 py-3">
         {/* Mobile hamburger button */}
         <div className="md:hidden flex justify-between items-center">
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+          <span className="text-sm font-medium text-gray-700">
             {activeSection ? navItems.find(item => item.id === activeSection)?.label : 'Navigation'}
           </span>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            className="p-2 rounded-md hover:bg-gray-100 transition-colors"
             aria-label="Toggle navigation menu"
           >
             <svg
-              className="w-6 h-6 text-gray-700 dark:text-gray-200"
+              className="w-6 h-6 text-gray-700"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -97,10 +97,10 @@ export function Navigation() {
             <li key={item.id}>
               <button
                 onClick={() => scrollToSection(item.id)}
-                className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors duration-200 hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 ${
+                className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors duration-200 hover:bg-blue-100 hover:text-blue-700 ${
                   activeSection === item.id
-                    ? 'bg-blue-600 text-white hover:bg-blue-700 hover:text-white dark:bg-blue-700 dark:hover:bg-blue-600'
-                    : 'text-gray-700 dark:text-gray-200'
+                    ? 'bg-blue-600 text-white hover:bg-blue-700 hover:text-white'
+                    : 'text-gray-700'
                 }`}
               >
                 {item.label}
@@ -110,7 +110,7 @@ export function Navigation() {
           <li>
             <button
               onClick={handlePrint}
-              className="px-3 py-1.5 text-sm font-medium rounded-md transition-colors duration-200 bg-green-600 text-white hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 flex items-center gap-1.5"
+              className="px-3 py-1.5 text-sm font-medium rounded-md transition-colors duration-200 bg-green-600 text-white hover:bg-green-700 flex items-center gap-1.5"
               aria-label="Print resume"
             >
               <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -123,16 +123,16 @@ export function Navigation() {
 
         {/* Mobile dropdown menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+          <div className="md:hidden mt-3 pt-3 border-t border-gray-200">
             <ul className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <li key={item.id}>
                   <button
                     onClick={() => scrollToSection(item.id)}
-                    className={`w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 ${
+                    className={`w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 hover:bg-blue-100 hover:text-blue-700 ${
                       activeSection === item.id
-                        ? 'bg-blue-600 text-white hover:bg-blue-700 hover:text-white dark:bg-blue-700 dark:hover:bg-blue-600'
-                        : 'text-gray-700 dark:text-gray-200'
+                        ? 'bg-blue-600 text-white hover:bg-blue-700 hover:text-white'
+                        : 'text-gray-700'
                     }`}
                   >
                     {item.label}
@@ -142,7 +142,7 @@ export function Navigation() {
               <li>
                 <button
                   onClick={handlePrint}
-                  className="w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 bg-green-600 text-white hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 flex items-center gap-1.5"
+                  className="w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 bg-green-600 text-white hover:bg-green-700 flex items-center gap-1.5"
                   aria-label="Print resume"
                 >
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">

@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 .resume-section-header {
-  @apply text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 pb-3 border-b-2 border-gray-300 dark:border-gray-700 flex items-center gap-3;
+  @apply text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-gray-300 flex items-center gap-3;
 }
 
 .project-section {
-  @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8
+  @apply bg-white rounded-xl shadow-lg p-8 mb-8
 }
 
 .project-section h2 {
-  @apply text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6;
+  @apply text-2xl font-bold text-gray-900 mb-6;
 }
 
 .main-background {
-  @apply bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800;
+  @apply bg-gradient-to-br from-gray-50 to-blue-50;
 }
 
 :root {
@@ -92,53 +92,6 @@
   --color-gray-900: #111827;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Base colors for dark mode */
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    
-    /* Adjust grays for dark mode - invert the scale */
-    --color-gray-50: #1f2937;
-    --color-gray-100: #374151;
-    --color-gray-200: #4b5563;
-    --color-gray-300: #6b7280;
-    --color-gray-400: #9ca3af;
-    --color-gray-500: #9ca3af;
-    --color-gray-600: #d1d5db;
-    --color-gray-700: #e5e7eb;
-    --color-gray-800: #f3f4f6;
-    --color-gray-900: #f9fafb;
-    
-    /* Adjust blue palette for better dark mode contrast */
-    --color-blue-50: #1e3a8a;
-    --color-blue-100: #1e40af;
-    
-    /* Adjust purple palette for better dark mode contrast */
-    --color-purple-50: #581c87;
-    --color-purple-100: #6b21a8;
-    
-    /* Adjust green palette for better dark mode contrast */
-    --color-green-50: #14532d;
-    --color-green-100: #166534;
-    
-    /* Adjust orange palette for better dark mode contrast */
-    --color-orange-50: #7c2d12;
-    --color-orange-100: #9a3412;
-    
-    /* Adjust teal palette for better dark mode contrast */
-    --color-teal-50: #134e4a;
-    --color-teal-100: #115e59;
-    
-    /* Adjust pink palette for better dark mode contrast */
-    --color-pink-50: #831843;
-    --color-pink-100: #9f1239;
-    
-    /* Adjust indigo palette for better dark mode contrast */
-    --color-indigo-50: #312e81;
-    --color-indigo-100: #3730a3;
-  }
-}
 
 html {
   scroll-behavior: smooth;

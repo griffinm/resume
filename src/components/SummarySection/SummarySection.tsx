@@ -14,7 +14,7 @@ export function SummarySection({ summary }: SummarySectionProps) {
         Professional Summary
       </h2>
       <div className="">
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{summary}</p>
+        <p className="text-gray-700 leading-relaxed">{summary}</p>
       </div>
     </div>
   );
