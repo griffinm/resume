@@ -49,9 +49,9 @@ export default function ResumePage() {
                 <WorkExperienceSection workExperience={workExperience} />
               </section>
 
-              {/* <section id="projects">
+              <section id="projects">
                 <ProjectsSection projects={projects} />
-              </section> */}
+              </section>
 
               <section id="education">
                 <EducationSection education={education} />
