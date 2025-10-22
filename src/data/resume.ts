@@ -23,12 +23,18 @@ export const resumeData: Resume = {
       endDate: "Present",
       location: "Remote",
       description:
-        "Led the engineering team through successful acquisition by OldCastle in 2024. Developed and implemented comprehensive AI-driven solutions for automated landscaping design and project management.",
+        "Led the engineering team including core engineering, data science, data engineering. Also acted as a key individual contributor for all aspects of the engineering team.",
       achievements: [
-        "Led the engineering team to successfully integrate Yardzen's AI-powered landscaping platform into OldCastle's existing operations",
-        "Developed and implemented a comprehensive AI-driven solution for automated landscaping design and project management",
-        "Successfully migrated Yardzen's core platform to a new, scalable cloud infrastructure, improving system reliability and performance",
-        "Collaborated with cross-functional teams to optimize Yardzen's AI-powered landscaping platform for seamless integration into OldCastle's operations",
+        "Led a hybrid team of onshore and offshore engineers to build a scalable online landscape design platform",
+        "Led the effort to extend the core product to include a marketplace for finding a landscape contractor. This product included all aspects of the relationship from introduction to on platform payments using Stripe Connect",
+        "Developed and implemented an AI powered landscaping design tool that allows users to design their landscape and get a quote for the materials and labor. This tool used a custom diffusion model trained on our existing data.",
+        "Led the engineering team through an acquisition by OldCastle in late 2024",
+        "Acted as a key member of the executive team to steer the company through multiple rounds of funding, growth, shifts, and changes in leadership.",
+        "Developed and implented an AI powered sales assistant that would analyze calls and provide insights and recommendations to the sales team in near real time.",
+        "Led the effort to migrate yardzen.com from Squarespace to Contentful and NextJS",
+        "Developed and implemented AI agents for streamline back-office operations",
+        "Developed and implemented a custom AI powered chatbot for the customer support team",
+        "Acted as the principal architect and developer of deployment and data infrastructure"
       ],
       acquisition: {
         acquirer: "OldCastle",
@@ -121,14 +127,19 @@ export const resumeData: Resume = {
         "Agent Design and Deployment",
         "Stable Diffusion",
         "CUDA",
-        "AI Infrastructure"
+        "Karas",
+        "AI Infrastructure",
+        "Cursor",
+        "Claude Code",
+        ""
       ],
     },
     {
       category: "Backend",
       items: [
-        "Node.js",
-        "Next.js",
+        "Node",
+        "NextJS",
+        "NestJS",
         "KOA",
         "Python",
         "Ruby/Rails",
@@ -195,7 +206,6 @@ export const resumeData: Resume = {
       description:
         "An open source PWA budgeting tool that syncs transactions from the Plaid API and provides helpful insights and reports",
       technologies: ["React", "Ruby on Rails", "PostgreSQL", "Plaid API", "Docker", "Kubernetes", "NX Monorepo", "Tailwind CSS"],
-      github: "https://github.com/griffinm/budgeting",
       link: "https://griffinmahoney.me/projects/budgeting",
       highlights: [
         "Month over Month reports with category breakdown",
