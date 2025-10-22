@@ -3,14 +3,9 @@ name: Build and Push Docker Image to ECR
 on:
   push:
     branches:
-      - main
-      - master
+      - release
     tags:
       - 'v*'
-  pull_request:
-    branches:
-      - main
-      - master
   workflow_dispatch:
 
 env:
