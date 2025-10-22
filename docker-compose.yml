@@ -1,0 +1,27 @@
+networks:
+  prod:
+    name: prod
+    driver: bridge
+    external: true
+
+services:
+  resume:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: griffinmahoney-com/resume:latest
+    container_name: resume-app
+    ports:
+      - "10100:10100"
+    restart: unless-stopped
+    networks:
+      - prod
+    environment:
+      - NODE_ENV=production
+      - HOSTNAME=0.0.0.0
+    healthcheck:
+      test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
