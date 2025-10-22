@@ -30,9 +30,9 @@ export const resumeData: Resume = {
         "Developed and implemented an AI powered landscaping design tool that allows users to design their landscape and get a quote for the materials and labor. This tool used a custom diffusion model trained on our existing data.",
         "Led the engineering team through an acquisition by OldCastle in late 2024",
         "Acted as a key member of the executive team to steer the company through multiple rounds of funding, growth, shifts, and changes in leadership.",
-        "Developed and implented an AI powered sales assistant that would analyze calls and provide insights and recommendations to the sales team in near real time.",
+        "Developed and implemented an AI powered sales assistant that would analyze calls and provide insights and recommendations to the sales team in near real time.",
         "Led the effort to migrate yardzen.com from Squarespace to Contentful and NextJS",
-        "Developed and implemented AI agents for streamline back-office operations",
+        "Developed and implemented AI agents to streamline back-office operations",
         "Developed and implemented a custom AI powered chatbot for the customer support team",
         "Acted as the principal architect and developer of deployment and data infrastructure"
       ],
@@ -127,11 +127,10 @@ export const resumeData: Resume = {
         "Agent Design and Deployment",
         "Stable Diffusion",
         "CUDA",
-        "Karas",
+        "Keras",
         "AI Infrastructure",
         "Cursor",
-        "Claude Code",
-        ""
+        "Claude Code"
       ],
     },
     {
@@ -196,7 +195,6 @@ export const resumeData: Resume = {
         "Full-text search with Typesense",
         "Robust task management system",
         "NextJS with React Front End",
-        "Full text search with Typesense",
         "Deployed with Docker and K8s"
       ],
     },
@@ -223,79 +221,8 @@ export const resumeData: Resume = {
 
   languages: [],
   certifications: [],
-
-  achievements: [
-    {
-      id: "achievement-1",
-      title: "Tech Innovation Award",
-      description:
-        "Received company-wide recognition for developing automated testing framework that reduced QA time by 70%",
-      date: "Nov 2022",
-    },
-    {
-      id: "achievement-2",
-      title: "Hackathon Winner - SF DevFest 2021",
-      description:
-        "First place in 48-hour hackathon with team of 4, built AI-powered code review assistant",
-      date: "Aug 2021",
-    },
-    {
-      id: "achievement-3",
-      title: "Open Source Contributor",
-      description:
-        "Active contributor to React, Next.js, and TypeScript projects with 100+ merged pull requests",
-      date: "Ongoing",
-    },
-  ],
-
-  volunteerWork: [
-    {
-      id: "volunteer-1",
-      organization: "Code for Good",
-      role: "Technical Mentor",
-      startDate: "Jan 2020",
-      endDate: "Present",
-      description:
-        "Mentoring underrepresented minorities in tech through coding bootcamp and career guidance.",
-      achievements: [
-        "Mentored 15+ students in web development fundamentals",
-        "Conducted monthly workshops on modern JavaScript frameworks",
-        "Helped 8 mentees secure their first tech jobs",
-      ],
-    },
-    {
-      id: "volunteer-2",
-      organization: "Local Library Digital Literacy Program",
-      role: "Web Development Instructor",
-      startDate: "Sep 2019",
-      endDate: "Dec 2021",
-      description:
-        "Teaching senior citizens and low-income families basic computer skills and web development.",
-      achievements: [
-        "Designed curriculum for beginner web development course",
-        "Taught 50+ students across 10 cohorts",
-        "Created online resources used by 200+ learners",
-      ],
-    },
-  ],
-
-  references: [
-    {
-      name: "Sarah Chen",
-      title: "Engineering Manager",
-      company: "TechCorp Solutions",
-      email: "sarah.chen@techcorp.com",
-      phone: "+1 (555) 234-5678",
-      relationship: "Direct Supervisor",
-    },
-    {
-      name: "Michael Rodriguez",
-      title: "CTO",
-      company: "StartupXYZ",
-      email: "michael@startupxyz.com",
-      phone: "+1 (555) 345-6789",
-      relationship: "Former Manager",
-    },
-  ],
+  achievements: [],
+  volunteerWork: [],
+  references: [],
 };
 
