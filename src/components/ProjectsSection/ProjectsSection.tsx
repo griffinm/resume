@@ -1,4 +1,5 @@
 import { Project } from "@/types/resume";
+import Link from "next/link";
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -24,12 +25,12 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                 <div className="flex gap-2 flex-wrap">
                   {project.link && (
                     <span className="px-3 py-1.5 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-full text-xs font-semibold shadow-sm">
-                      🌐 Live
+                      <Link href={project.link}>🌐 Live</Link>
                     </span>
                   )}
                   {project.github && (
                     <span className="px-3 py-1.5 bg-gray-700 text-white rounded-full text-xs font-semibold shadow-sm">
-                      💻 GitHub
+                      <Link href={project.github}>💻 GitHub</Link>
                     </span>
                   )}
                 </div>
