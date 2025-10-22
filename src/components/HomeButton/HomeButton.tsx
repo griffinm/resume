@@ -27,7 +27,7 @@ export function HomeButton({
   return (
     <Link
       href={href}
-      className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${gradientFrom} ${gradientTo} p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105`}
+      className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${gradientFrom} ${gradientTo} p-4 sm:p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105`}
     >
       <div className="relative z-10 flex flex-col items-center text-center">
         <div className="mb-4 p-4 bg-white/20 rounded-full">

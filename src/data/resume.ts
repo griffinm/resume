@@ -23,12 +23,18 @@ export const resumeData: Resume = {
       endDate: "Present",
       location: "Remote",
       description:
-        "Led the engineering team through successful acquisition by OldCastle in 2024. Developed and implemented comprehensive AI-driven solutions for automated landscaping design and project management.",
+        "Led the engineering team including core engineering, data science, data engineering. Also acted as a key individual contributor for all aspects of the engineering team.",
       achievements: [
-        "Led the engineering team to successfully integrate Yardzen's AI-powered landscaping platform into OldCastle's existing operations",
-        "Developed and implemented a comprehensive AI-driven solution for automated landscaping design and project management",
-        "Successfully migrated Yardzen's core platform to a new, scalable cloud infrastructure, improving system reliability and performance",
-        "Collaborated with cross-functional teams to optimize Yardzen's AI-powered landscaping platform for seamless integration into OldCastle's operations",
+        "Led a hybrid team of onshore and offshore engineers to build a scalable online landscape design platform",
+        "Led the effort to extend the core product to include a marketplace for finding a landscape contractor. This product included all aspects of the relationship from introduction to on platform payments using Stripe Connect",
+        "Developed and implemented an AI powered landscaping design tool that allows users to design their landscape and get a quote for the materials and labor. This tool used a custom diffusion model trained on our existing data.",
+        "Led the engineering team through an acquisition by OldCastle in late 2024",
+        "Acted as a key member of the executive team to steer the company through multiple rounds of funding, growth, shifts, and changes in leadership.",
+        "Developed and implemented an AI powered sales assistant that would analyze calls and provide insights and recommendations to the sales team in near real time.",
+        "Led the effort to migrate yardzen.com from Squarespace to Contentful and NextJS",
+        "Developed and implemented AI agents to streamline back-office operations",
+        "Developed and implemented a custom AI powered chatbot for the customer support team",
+        "Acted as the principal architect and developer of deployment and data infrastructure"
       ],
       acquisition: {
         acquirer: "OldCastle",
@@ -121,14 +127,18 @@ export const resumeData: Resume = {
         "Agent Design and Deployment",
         "Stable Diffusion",
         "CUDA",
-        "AI Infrastructure"
+        "Keras",
+        "AI Infrastructure",
+        "Cursor",
+        "Claude Code"
       ],
     },
     {
       category: "Backend",
       items: [
-        "Node.js",
-        "Next.js",
+        "Node",
+        "NextJS",
+        "NestJS",
         "KOA",
         "Python",
         "Ruby/Rails",
@@ -166,6 +176,7 @@ export const resumeData: Resume = {
         "Git",
         "Terraform",
         "Nginx",
+        "NX",
       ],
     },
   ],
@@ -173,122 +184,45 @@ export const resumeData: Resume = {
   projects: [
     {
       id: "project-1",
-      name: "DevCollab - Developer Collaboration Platform",
+      name: "Notes",
       description:
-        "Open-source platform for developers to collaborate on code reviews and pair programming sessions in real-time.",
-      technologies: ["Next.js", "Node.js", "WebSocket", "PostgreSQL", "Redis", "Docker"],
-      github: "github.com/alexjohnson/devcollab",
-      link: "https://devcollab.dev",
+        "An open source PWA note and task management with robust and helpful features",
+      technologies: ["React", "NextJS", "NodeJS", "PostgreSQL", "Prisma", "Typesense", "Docker", "Kubernetes", "NX Monorepo", "Tailwind CSS"],
+      github: "https://github.com/griffinm/griffin",
+      link: "https://griffinmahoney.me/projects/notes",
       highlights: [
-        "Built real-time code editor with syntax highlighting and collaborative cursors",
-        "Implemented video/audio calling using WebRTC",
-        "Gained 2,000+ GitHub stars and 50+ contributors",
-        "Featured on Product Hunt, ranked #3 product of the day",
+        "Full WYSIWYG with custom components",
+        "Full-text search with Typesense",
+        "Robust task management system",
+        "NextJS with React Front End",
+        "Deployed with Docker and K8s"
       ],
     },
     {
       id: "project-2",
-      name: "TaskFlow - Project Management Tool",
+      name: "Budgeting",
       description:
-        "Lightweight project management application with Kanban boards, time tracking, and team analytics.",
-      technologies: ["React", "TypeScript", "Express", "MongoDB", "Chart.js"],
-      github: "github.com/alexjohnson/taskflow",
+        "An open source PWA budgeting tool that syncs transactions from the Plaid API and provides helpful insights and reports",
+      technologies: ["React", "Ruby on Rails", "PostgreSQL", "Plaid API", "Docker", "Kubernetes", "NX Monorepo", "Tailwind CSS"],
+      link: "https://griffinmahoney.me/projects/budgeting",
       highlights: [
-        "Designed and implemented drag-and-drop Kanban interface",
-        "Built analytics dashboard with customizable reporting",
-        "Deployed to 500+ active users in beta phase",
+        "Month over Month reports with category breakdown",
+        "Transaction sorting and filtering",
+        "Budget creation and management",
+        "Transaction and merchant sorting",
+        "Trend reports",
+        "Spending analytics",
+        "Smart categories",
+        "Plaid API integration",
+        "Docker and K8s deployment",
       ],
-    },
-    {
-      id: "project-3",
-      name: "API Monitor - Service Health Dashboard",
-      description:
-        "Monitoring solution for tracking API uptime, response times, and error rates with alerting capabilities.",
-      technologies: ["Vue.js", "Python", "Flask", "PostgreSQL", "Redis"],
-      link: "https://apimonitor.io",
-      highlights: [
-        "Monitors 100+ endpoints with 1-minute intervals",
-        "Integrated with Slack, Discord, and email for alerting",
-        "Built customizable dashboard with real-time graphs",
-      ],
-    },
+    }
   ],
 
   languages: [],
   certifications: [],
-
-  achievements: [
-    {
-      id: "achievement-1",
-      title: "Tech Innovation Award",
-      description:
-        "Received company-wide recognition for developing automated testing framework that reduced QA time by 70%",
-      date: "Nov 2022",
-    },
-    {
-      id: "achievement-2",
-      title: "Hackathon Winner - SF DevFest 2021",
-      description:
-        "First place in 48-hour hackathon with team of 4, built AI-powered code review assistant",
-      date: "Aug 2021",
-    },
-    {
-      id: "achievement-3",
-      title: "Open Source Contributor",
-      description:
-        "Active contributor to React, Next.js, and TypeScript projects with 100+ merged pull requests",
-      date: "Ongoing",
-    },
-  ],
-
-  volunteerWork: [
-    {
-      id: "volunteer-1",
-      organization: "Code for Good",
-      role: "Technical Mentor",
-      startDate: "Jan 2020",
-      endDate: "Present",
-      description:
-        "Mentoring underrepresented minorities in tech through coding bootcamp and career guidance.",
-      achievements: [
-        "Mentored 15+ students in web development fundamentals",
-        "Conducted monthly workshops on modern JavaScript frameworks",
-        "Helped 8 mentees secure their first tech jobs",
-      ],
-    },
-    {
-      id: "volunteer-2",
-      organization: "Local Library Digital Literacy Program",
-      role: "Web Development Instructor",
-      startDate: "Sep 2019",
-      endDate: "Dec 2021",
-      description:
-        "Teaching senior citizens and low-income families basic computer skills and web development.",
-      achievements: [
-        "Designed curriculum for beginner web development course",
-        "Taught 50+ students across 10 cohorts",
-        "Created online resources used by 200+ learners",
-      ],
-    },
-  ],
-
-  references: [
-    {
-      name: "Sarah Chen",
-      title: "Engineering Manager",
-      company: "TechCorp Solutions",
-      email: "sarah.chen@techcorp.com",
-      phone: "+1 (555) 234-5678",
-      relationship: "Direct Supervisor",
-    },
-    {
-      name: "Michael Rodriguez",
-      title: "CTO",
-      company: "StartupXYZ",
-      email: "michael@startupxyz.com",
-      phone: "+1 (555) 345-6789",
-      relationship: "Former Manager",
-    },
-  ],
+  achievements: [],
+  volunteerWork: [],
+  references: [],
 };
 

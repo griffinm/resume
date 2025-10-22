@@ -10,7 +10,7 @@ on:
 
 env:
   AWS_REGION: us-east-1 
-  ECR_REPOSITORY: resume 
+  ECR_REPOSITORY: griffinmahoney-com/resume 
 
 jobs:
   build-and-push:
