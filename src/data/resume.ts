@@ -4,7 +4,7 @@ export const resumeData: Resume = {
   personalInfo: {
     name: "Griffin Mahoney",
     title: "Software Engineer | Technology Leader",
-    email: "griffin@griffinmahoney.com",
+    email: "griffin.mahoney@gmail.com",
     phone: "+1 (617) 652-0496",
     location: "Boston, MA",
     website: "griffinmahoney.com",
