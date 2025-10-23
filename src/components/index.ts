@@ -1,7 +1,6 @@
 export { ResumeHeader } from "./ResumeHeader";
 export { Navigation } from "./Navigation";
 export { TopNav } from "./TopNav";
-export { SummarySection } from "./SummarySection";
 export { SkillsSection } from "./SkillsSection";
 export { WorkExperienceSection } from "./WorkExperienceSection";
 export { ProjectsSection } from "./ProjectsSection";
@@ -11,4 +10,6 @@ export { LanguagesSection } from "./LanguagesSection";
 export { AchievementsSection } from "./AchievementsSection";
 export { VolunteerWorkSection } from "./VolunteerWorkSection";
 export { HomeButton } from "./HomeButton";
+export { HighlightsSection } from "./HighlightsSection";
+export { AboutMeSection } from "./AboutMeSection";
 export * from "./Icons";
