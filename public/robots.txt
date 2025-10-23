@@ -1,0 +1,13 @@
+# robots.txt for griffinmahoney.me
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://griffinmahoney.me/sitemap.xml
+
+# Disallow duplicate content
+Disallow: /*?*
+
+# Additional crawl instructions
+Crawl-delay: 1
+
