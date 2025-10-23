@@ -2,11 +2,12 @@ import { resumeData } from "@/data/resume";
 import { ResumeHeader } from "@/components/ResumeHeader";
 import { Navigation } from "@/components/Navigation";
 import { TopNav } from "@/components/TopNav";
-import { SummarySection } from "@/components/SummarySection";
+import { AboutMeSection } from "@/components/AboutMeSection";
 import { SkillsSection } from "@/components/SkillsSection";
 import { WorkExperienceSection } from "@/components/WorkExperienceSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { EducationSection } from "@/components/EducationSection";
+import { HighlightsSection } from "@/components/HighlightsSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -35,10 +36,14 @@ export default function ResumePage() {
           <Navigation />
 
           <div className="bg-white shadow-lg rounded-b-lg print:shadow-none">
-            <div className="px-6 py-8 md:px-10 md:py-10 flex flex-col gap-8">
+            <div className="px-6 py-8 md:px-10 md:py-10 flex flex-col gap-8 sm:gap-12">
             
               <section id="summary">
-                <SummarySection summary={personalInfo.summary} />
+                <AboutMeSection />
+              </section>
+
+              <section id="highlights">
+                <HighlightsSection />
               </section>
 
               <section id="skills">
