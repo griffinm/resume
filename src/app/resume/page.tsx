@@ -13,6 +13,15 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Resume",
   description: "Professional resume showcasing Griffin Mahoney's work experience, technical skills, projects, and education. View detailed information about software engineering expertise and leadership experience.",
+  alternates: {
+    canonical: '/resume',
+  },
+  openGraph: {
+    title: "Resume | Griffin Mahoney",
+    description: "Professional resume showcasing Griffin Mahoney's work experience, technical skills, projects, and education.",
+    url: '/resume',
+    type: 'profile',
+  },
 };
 
 export default function ResumePage() {

@@ -1,4 +1,17 @@
 import { TopNav, HomeButton } from '@/components';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "Griffin Mahoney",
+    description: "Professional portfolio of Griffin Mahoney, a Software Engineer and Technology Leader. Explore my professional experience, skills, and personal projects.",
+    url: '/',
+    type: 'website',
+  },
+};
 
 export default function HomePage() {
   return (
