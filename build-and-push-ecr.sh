@@ -285,6 +285,38 @@ if [ "$DEPLOY_K8S" = true ]; then
             exit 1
         fi
         
+        # Configure ECR pull secret
+        print_info "Configuring ECR pull secret in Kubernetes..."
+        
+        # Extract AWS account ID from ECR registry
+        AWS_ACCOUNT_ID=$(echo "${ECR_REGISTRY}" | cut -d'.' -f1)
+        
+        # Delete existing secret if it exists
+        kubectl -n ${K8S_NAMESPACE} delete secret ecr-creds --ignore-not-found
+        
+        # Create new ECR pull secret
+        print_info "Creating ECR credentials secret..."
+        if kubectl -n ${K8S_NAMESPACE} create secret docker-registry ecr-creds \
+            --docker-server=${ECR_REGISTRY} \
+            --docker-username=AWS \
+            --docker-password="$(aws ecr get-login-password --region ${AWS_REGION})"; then
+            print_success "ECR credentials secret created!"
+        else
+            print_error "Failed to create ECR credentials secret!"
+            exit 1
+        fi
+        
+        # Patch the default service account to use the pull secret
+        print_info "Configuring service account to use ECR credentials..."
+        if kubectl -n ${K8S_NAMESPACE} patch serviceaccount default \
+            -p '{"imagePullSecrets":[{"name":"ecr-creds"}]}'; then
+            print_success "Service account configured!"
+            echo ""
+        else
+            print_warning "Failed to patch service account (may already be configured)"
+            echo ""
+        fi
+        
         print_info "Updating deployment image to: ${ECR_IMAGE}"
         
         # Update the image in the deployment
