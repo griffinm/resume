@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
       - name: resume
-        image: 041825629273.dkr.ecr.us-east-1.amazonaws.com/griffinmahoney-com/resume:release-2ccb1d0
+        image: nas.malfin.com:10100/griffinmahoney-com/resume:5aab90e
+        # image: nas.malfin.com:10100/notes-api:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 10100

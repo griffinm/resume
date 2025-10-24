@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Build and push Docker image to AWS ECR and optionally deploy to Kubernetes
+# Build and push Docker image to Docker registry and optionally deploy to Kubernetes
 # Usage: ./build-and-push-ecr.sh [OPTIONS]
 #
 # OPTIONS:
@@ -14,9 +14,8 @@
 set -e
 
 # Configuration
-ECR_REGISTRY="041825629273.dkr.ecr.us-east-1.amazonaws.com"
-ECR_REPOSITORY="griffinmahoney-com/resume"
-AWS_REGION="us-east-1"
+REGISTRY="nas.malfin.com:10100"
+REPOSITORY="griffinmahoney-com/resume"
 K8S_MANIFEST="k8s/deployment.yaml"
 K8S_NAMESPACE="prod"
 K8S_DEPLOYMENT="resume"
@@ -58,22 +57,21 @@ print_warning() {
 # Function to show help
 show_help() {
     cat << EOF
-Build and push Docker image to AWS ECR and optionally deploy to Kubernetes
+Build and push Docker image to Docker registry and optionally deploy to Kubernetes
 
 Usage: ./build-and-push-ecr.sh [OPTIONS]
 
 OPTIONS:
     -t, --tag TAG     Image tag (default: git short hash)
     --no-cache        Build without using cache
-    --build-only      Only build, don't push to ECR
-    --push-only       Only push to ECR (skip build)
+    --build-only      Only build, don't push to registry
+    --push-only       Only push to registry (skip build)
     --deploy          Deploy to Kubernetes after push
     -h, --help        Show this help message
 
 Configuration:
-    ECR Registry:      ${ECR_REGISTRY}
-    ECR Repository:    ${ECR_REPOSITORY}
-    AWS Region:        ${AWS_REGION}
+    Registry:          ${REGISTRY}
+    Repository:        ${REPOSITORY}
     Default Tag:       ${GIT_SHORT_HASH}
     K8s Manifest:      ${K8S_MANIFEST}
     K8s Namespace:     ${K8S_NAMESPACE}
@@ -103,8 +101,7 @@ Examples:
 
 Prerequisites:
     - Docker must be running
-    - AWS CLI must be installed and configured
-    - Appropriate AWS credentials with ECR permissions
+    - Docker credentials for ${REGISTRY} (use 'docker login ${REGISTRY}')
     - Git repository (for default tag)
     - kubectl installed and configured (for --deploy)
 
@@ -147,17 +144,17 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Construct full image names
-LOCAL_IMAGE="${ECR_REPOSITORY}:${IMAGE_TAG}"
-ECR_IMAGE="${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}"
+LOCAL_IMAGE="${REPOSITORY}:${IMAGE_TAG}"
+REMOTE_IMAGE="${REGISTRY}/${REPOSITORY}:${IMAGE_TAG}"
 
 # Get script directory
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR"
 
-print_info "Docker Build and Push to ECR"
+print_info "Docker Build and Push to Registry"
 echo ""
-print_info "Local Image: ${LOCAL_IMAGE}"
-print_info "ECR Image:   ${ECR_IMAGE}"
+print_info "Local Image:  ${LOCAL_IMAGE}"
+print_info "Remote Image: ${REMOTE_IMAGE}"
 echo ""
 
 # Check prerequisites
@@ -168,11 +165,6 @@ fi
 
 if ! docker info &> /dev/null; then
     print_error "Docker daemon is not running. Please start Docker."
-    exit 1
-fi
-
-if ! command -v aws &> /dev/null; then
-    print_error "AWS CLI is not installed. Please install AWS CLI first."
     exit 1
 fi
 
@@ -217,21 +209,21 @@ else
     fi
 fi
 
-# Push to ECR
+# Push to registry
 if [ "$BUILD_ONLY" = false ]; then
-    print_info "Authenticating with ECR..."
+    print_info "Checking authentication with registry..."
     
-    if aws ecr get-login-password --region "${AWS_REGION}" | docker login --username AWS --password-stdin "${ECR_REGISTRY}" 2>&1; then
-        print_success "Successfully authenticated with ECR"
+    # Check if already logged in by attempting to get auth token
+    if ! docker login "${REGISTRY}" --username dummy --password dummy &> /dev/null; then
+        # Not logged in or wrong credentials
+        print_warning "Not authenticated with ${REGISTRY}"
+        print_info "Please authenticate with: docker login ${REGISTRY}"
+        print_info "Attempting to continue anyway (you may already be logged in)..."
         echo ""
-    else
-        print_error "ECR authentication failed!"
-        print_info "Make sure your AWS credentials are configured correctly."
-        exit 1
     fi
     
-    print_info "Tagging image for ECR..."
-    if docker tag "${LOCAL_IMAGE}" "${ECR_IMAGE}"; then
+    print_info "Tagging image for registry..."
+    if docker tag "${LOCAL_IMAGE}" "${REMOTE_IMAGE}"; then
         print_success "Image tagged successfully!"
         echo ""
     else
@@ -239,27 +231,27 @@ if [ "$BUILD_ONLY" = false ]; then
         exit 1
     fi
     
-    print_info "Pushing image to ECR..."
+    print_info "Pushing image to registry..."
     print_info "This may take a few minutes depending on image size and network speed..."
     echo ""
     
-    if docker push "${ECR_IMAGE}"; then
-        print_success "Image pushed to ECR successfully!"
+    if docker push "${REMOTE_IMAGE}"; then
+        print_success "Image pushed to registry successfully!"
         echo ""
-        print_info "Image URI: ${ECR_IMAGE}"
+        print_info "Image URI: ${REMOTE_IMAGE}"
         echo ""
         print_info "To pull this image:"
-        echo "  docker pull ${ECR_IMAGE}"
+        echo "  docker pull ${REMOTE_IMAGE}"
         echo ""
     else
-        print_error "Failed to push image to ECR!"
-        print_info "Check your AWS permissions and try again."
+        print_error "Failed to push image to registry!"
+        print_info "Make sure you're authenticated with: docker login ${REGISTRY}"
         exit 1
     fi
 else
-    print_info "Skipping push to ECR (--build-only specified)"
+    print_info "Skipping push to registry (--build-only specified)"
     echo ""
-    print_info "To push this image to ECR later, run:"
+    print_info "To push this image to registry later, run:"
     echo "  ./build-and-push-ecr.sh --push-only -t ${IMAGE_TAG}"
     echo ""
 fi
@@ -267,7 +259,7 @@ fi
 # Deploy to Kubernetes
 if [ "$DEPLOY_K8S" = true ]; then
     if [ "$BUILD_ONLY" = true ]; then
-        print_warning "Cannot deploy with --build-only flag. Image must be pushed to ECR first."
+        print_warning "Cannot deploy with --build-only flag. Image must be pushed to registry first."
         echo ""
     else
         print_info "Deploying to Kubernetes..."
@@ -285,42 +277,10 @@ if [ "$DEPLOY_K8S" = true ]; then
             exit 1
         fi
         
-        # Configure ECR pull secret
-        print_info "Configuring ECR pull secret in Kubernetes..."
-        
-        # Extract AWS account ID from ECR registry
-        AWS_ACCOUNT_ID=$(echo "${ECR_REGISTRY}" | cut -d'.' -f1)
-        
-        # Delete existing secret if it exists
-        kubectl -n ${K8S_NAMESPACE} delete secret ecr-creds --ignore-not-found
-        
-        # Create new ECR pull secret
-        print_info "Creating ECR credentials secret..."
-        if kubectl -n ${K8S_NAMESPACE} create secret docker-registry ecr-creds \
-            --docker-server=${ECR_REGISTRY} \
-            --docker-username=AWS \
-            --docker-password="$(aws ecr get-login-password --region ${AWS_REGION})"; then
-            print_success "ECR credentials secret created!"
-        else
-            print_error "Failed to create ECR credentials secret!"
-            exit 1
-        fi
-        
-        # Patch the default service account to use the pull secret
-        print_info "Configuring service account to use ECR credentials..."
-        if kubectl -n ${K8S_NAMESPACE} patch serviceaccount default \
-            -p '{"imagePullSecrets":[{"name":"ecr-creds"}]}'; then
-            print_success "Service account configured!"
-            echo ""
-        else
-            print_warning "Failed to patch service account (may already be configured)"
-            echo ""
-        fi
-        
-        print_info "Updating deployment image to: ${ECR_IMAGE}"
+        print_info "Updating deployment image to: ${REMOTE_IMAGE}"
         
         # Update the image in the deployment
-        if kubectl set image deployment/${K8S_DEPLOYMENT} ${K8S_DEPLOYMENT}=${ECR_IMAGE} -n ${K8S_NAMESPACE}; then
+        if kubectl set image deployment/${K8S_DEPLOYMENT} ${K8S_DEPLOYMENT}=${REMOTE_IMAGE} -n ${K8S_NAMESPACE}; then
             print_success "Deployment image updated!"
             echo ""
         else
