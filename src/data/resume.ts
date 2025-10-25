@@ -111,11 +111,14 @@ export const resumeData: Resume = {
     {
       category: "Leadership & Management",
       items: [
+        "Due Diligence",
+        "Fundraising",
         "Hiring and Recruiting",
         "Building Offshore Teams",
         "Creating a culture of innovation",
-        "Agile",
+        "Product Management",
         "Technology and Business Strategy",
+        "Agile",
       ],
     },
     {
