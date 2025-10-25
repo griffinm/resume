@@ -23,10 +23,10 @@ COPY . .
 
 # Set environment variables for build
 ENV NEXT_TELEMETRY_DISABLED 1
-ENV NODE_ENV production
 
-# Build the application
-RUN npm run build
+# Build the application in production mode
+# This ensures minification and optimizations are enabled
+RUN NODE_ENV=production npm run build
 
 # Stage 3: Runner
 FROM node:20-alpine AS runner
