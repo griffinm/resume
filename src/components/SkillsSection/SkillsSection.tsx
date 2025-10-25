@@ -19,7 +19,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
         {skills.map((skillGroup, index) => {
           return (
             <div key={index} className={`p-4 border border-blue-300 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 hover:shadow-md transition-shadow`}>
-              <h3 className="text-lg font-semibold text-blue-800 mb-3">{skillGroup.category}</h3>
+              <h3 className="text-lg font-semibold mb-3">{skillGroup.category}</h3>
               <div className="flex flex-wrap gap-2">
                 {skillGroup.items.map((skill, idx) => (
                   <span key={idx} className={`px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-sm font-medium border border-blue-300 hover:border-blue-400 hover:bg-blue-200 transition-all`}>
