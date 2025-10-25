@@ -3,11 +3,46 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://griffinmahoney.me'),
   title: {
     default: "Griffin Mahoney",
     template: "%s | Griffin Mahoney"
   },
   description: "Professional portfolio of Griffin Mahoney, a Software Engineer and Technology Leader. This site contains both a resume and a portfolio of my projects.",
+  keywords: ['Griffin Mahoney', 'Software Engineer', 'Technology Leader', 'Portfolio', 'Resume', 'Web Development'],
+  authors: [{ name: 'Griffin Mahoney' }],
+  creator: 'Griffin Mahoney',
+  publisher: 'Griffin Mahoney',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://griffinmahoney.me',
+    siteName: 'Griffin Mahoney Portfolio',
+    title: 'Griffin Mahoney',
+    description: 'Professional portfolio of Griffin Mahoney, a Software Engineer and Technology Leader. This site contains both a resume and a portfolio of my projects.',
+    images: [
+      {
+        url: '/og-image.png', // You may want to create this image
+        width: 1200,
+        height: 630,
+        alt: 'Griffin Mahoney Portfolio',
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://griffinmahoney.me',
+  },
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },

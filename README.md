@@ -50,4 +50,17 @@ To customize the resume with your own information:
 - **TailwindCSS** - Utility-first CSS framework for layout and styling
 - **Mantine v7** - React components library (Badges, Accordions, Paper, ActionIcon)
 
-## Deploy
+## Deployment
+
+This application can be deployed using either Docker Compose or Kubernetes.
+
+` ./build-and-push-ecr.sh --deploy`
+
+### Production Configuration
+
+- **Application Port**: 10100
+- **Namespace**: prod
+- **Image Registry**: 041825629273.dkr.ecr.us-east-1.amazonaws.com
+- **Domain**: resume.griffinmahoney.com (configured in ingress)
+- **Replicas**: 2
+- **Resources**: 256Mi-512Mi memory, 100m-500m CPU
