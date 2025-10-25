@@ -8,8 +8,8 @@ export function HighlightsSection() {
         Professional Highlights
       </h2>
       <div>
-        <ul className="list-disc list-inside">
-          <li>
+        <ul className="bullet-list in">
+          <li className="leading-relaxed">
             Played a key leadership role, both as an executive or founder,in guiding three companies from inception to successful exits.
           </li>
           <li>

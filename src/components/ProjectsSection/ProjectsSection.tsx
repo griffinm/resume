@@ -48,7 +48,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                   ))}
                 </div>
               </div>
-              <ul className="list-disc list-inside space-y-1 text-gray-700">
+              <ul className="bullet-list">
                 {project.highlights.map((highlight, idx) => (
                   <li key={idx} className="text-sm">{highlight}</li>
                 ))}

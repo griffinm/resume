@@ -40,7 +40,7 @@ export function WorkExperienceSection({ workExperience }: WorkExperienceSectionP
             </div>
             <div className="p-4 bg-white">
               <p className="text-gray-700 mb-3">{job.description}</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <ul className="bullet-list">
                 {job.achievements.map((achievement, idx) => (
                   <li key={idx} className="leading-relaxed">{achievement}</li>
                 ))}
