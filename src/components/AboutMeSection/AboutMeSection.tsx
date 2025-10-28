@@ -14,7 +14,7 @@ export function AboutMeSection() {
         achieve success. In addition to building, I value every opportunity to coach others and to learn from them.
       </p>
       <p>
-        I believe my greatest strength is taking an idea from "0 to 1"—transforming a vague concept or identified opportunity into working 
+        I believe my greatest strength is taking an idea from &quot;0 to 1&quot;—transforming a vague concept or identified opportunity into working 
         software. I am capable of handling or managing the front end, back end, infrastructure, and security. When it comes to choosing technology, 
         I prefer to use proven and well-understood tools rather than chasing what&apos;s new and shiny. I also work closely with product vision 
         holders to refine and iterate on their ideas.
