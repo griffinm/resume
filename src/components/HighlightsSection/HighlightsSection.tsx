@@ -10,7 +10,7 @@ export function HighlightsSection() {
       <div>
         <ul className="bullet-list in">
           <li className="leading-relaxed">
-            Played a key leadership role, both as an executive or founder,in guiding three companies from inception to successful exits.
+            Played a key leadership role, both as an executive or founder, in guiding three companies from inception to successful exits.
           </li>
           <li>
             Participated in and played a key role in multiple successful fundraising rounds.
@@ -23,8 +23,8 @@ export function HighlightsSection() {
             On multiple occasions I have guided an organization through technical due-diligence, both for investment and for acquisition. 
           </li>
           <li>
-          Founded a company in 2016 a Technical Co-Founder. I created and launched the initial products of this company which were acquired 
-          2 years later. 
+            Founded a company in 2016 as a Technical Co-Founder. I created and launched the initial products of this company which were acquired 
+            2 years later. 
           </li>
         </ul>
       </div>

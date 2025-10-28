@@ -8,22 +8,24 @@ export function AboutMeSection() {
         About Me
       </h2>
       <div className="flex flex-col gap-4">
-        <p>
-          During the past almost 20 years I have worked in almost every role in the software engineering world. I have always loved building things, whether it&apos;s
-            be products, teams, or companies my passion is in seeing the results of my efforts and the efforts of the people I work with come to life and to see 
-            success. In addition to building, I also appreciate any opportunity to both coach people and learn from them. 
-        </p>
-        <p>
-          I believe my best talent resides in taking an idea from &quot;0 to 1&quot; - meaning taking something from a vague idea or identified opportunity to working software. 
-          I am able to do or manage the front end, back end, infrastructure, and security. When it comes to picking technology, I like to stick with what works and 
-          what people know as opposed to always just using what is new and shiney. In addition to this I am able to work closely with the holder of the product vision 
-          in order to refine and iterate their idea. 
-        </p>
-        <p>
-          When I am not at &quot;work&quot; you can usually find me working on a side project either trying to build a solution for a problem I have or by taking a 
-          new technology through its paces. These side projects include things like real time event detection from security cameras, personal finance apps, organizational 
-          apps, RF projects using an SDR, building computers, monitoring home energy use in Grafana, and training new AI models on both personal and public data sets. 
-        </p>
+      <p>
+        Over the past 20 years, I have worked in nearly every role within the software engineering world. I have always loved building things—whether 
+        products, teams, or companies. My passion lies in seeing the results of my efforts, and the efforts of those I work with, come to life and 
+        achieve success. In addition to building, I value every opportunity to coach others and to learn from them.
+      </p>
+      <p>
+        I believe my greatest strength is taking an idea from "0 to 1"—transforming a vague concept or identified opportunity into working 
+        software. I am capable of handling or managing the front end, back end, infrastructure, and security. When it comes to choosing technology, 
+        I prefer to use proven and well-understood tools rather than chasing what&apos;s new and shiny. I also work closely with product vision 
+        holders to refine and iterate on their ideas.
+      </p>
+      <p>
+        When I&apos;m not at &quot;work,&quot; you can usually find me tinkering on a side project—either building a solution to a problem I&apos;ve 
+        encountered or putting a new technology through its paces. My side projects have included real-time event detection from security cameras, 
+        personal finance apps, organizational tools, RF experiments using SDRs, computer building, home energy monitoring in Grafana, and training 
+        new AI models on both personal and public datasets.
+      </p>
+
       </div>
     </div>
   );
