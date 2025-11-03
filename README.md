@@ -43,6 +43,9 @@ To customize the resume with your own information:
 2. The types are defined in `src/types/resume.ts` - Modify these if you need different data structures
 3. The page layout is in `src/app/page.tsx` - Customize the design and sections as needed
 
+## Building
+To build, tag, and push a docker container use `build-and-push.sh`
+
 ## Tech Stack
 
 - **Next.js 15** - React framework with App Router and SSR
