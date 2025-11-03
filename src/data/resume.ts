@@ -207,7 +207,8 @@ export const resumeData: Resume = {
       description:
         "An open source PWA budgeting tool that syncs transactions from the Plaid API and provides helpful insights and reports",
       technologies: ["React", "Ruby on Rails", "PostgreSQL", "Plaid API", "Docker", "Kubernetes", "NX Monorepo", "Tailwind CSS"],
-      link: "https://griffinmahoney.me/projects/budgeting",
+      github: "https://github.com/griffinm/budgeting",
+      link: "https://griffinmahoney.me/projects/budgeting2",
       highlights: [
         "Month over Month reports with category breakdown",
         "Transaction sorting and filtering",
