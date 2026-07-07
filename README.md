@@ -55,15 +55,10 @@ To build, tag, and push a docker container use `build-and-push.sh`
 
 ## Deployment
 
-This application can be deployed using either Docker Compose or Kubernetes.
+Production is hosted on **AWS Amplify** and redeploys automatically on every push to `main`. See **[AMPLIFY.md](AMPLIFY.md)** for the full setup — build config, custom domain, DNS, and troubleshooting.
 
-` ./build-and-push-ecr.sh --deploy`
+- **Live site**: https://griffinmahoney.me
+- **Amplify app**: `resume` (`d2oomr1j63yuxz`), region `us-east-1`
+- **Build**: static export — `NEXT_OUTPUT=export npm run build` → `out/` (via `amplify.yml`)
 
-### Production Configuration
-
-- **Application Port**: 10100
-- **Namespace**: prod
-- **Image Registry**: 041825629273.dkr.ecr.us-east-1.amazonaws.com
-- **Domain**: resume.griffinmahoney.com (configured in ingress)
-- **Replicas**: 2
-- **Resources**: 256Mi-512Mi memory, 100m-500m CPU
+A containerized deployment is also available — see **[DOCKER.md](DOCKER.md)**.
