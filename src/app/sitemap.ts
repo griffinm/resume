@@ -1,5 +1,8 @@
 import { MetadataRoute } from 'next'
- 
+
+// Generate the sitemap at build time so it works with `output: 'export'`.
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://griffinmahoney.me'
   
